@@ -2,29 +2,29 @@
   <div class="menu-mobile">
     <ul>
         <li>
-            <a href="">
-                <i class="fas fa-home"></i>HOME
-            </a>
+          <a href="">
+            <i class="fas fa-home"></i>HOME
+          </a>
         </li>
         <li>
-            <a href="">
-                <i class="fas fa-user"></i>SUB-THAI
-            </a>
+          <a href="">
+            <i class="fas fa-language"></i>SUB-THAI
+          </a>
         </li>
         <li>
-            <a href="">
-                <i class="fas fa-sign-in-alt"></i>SOUND-THAI
-            </a>
+          <a href="">
+            <i class="fab fa-teamspeak"></i>SOUND-THAI
+          </a>
         </li>
         <li>
-            <a href="">
-                <i class="fas fa-cloud-download-alt"></i>MOVIE
-            </a>
+          <a href="">
+            <i class="fas fa-film"></i>MOVIE
+          </a>
         </li>
         <li>
-            <a href="https://lin.ee/cQkxJQK">
-                <i class="fab fa-line"></i>CONTRACT
-            </a>
+          <a href="https://lin.ee/cQkxJQK">
+            <i class="fas fa-comments"></i>CONTRACT
+          </a>
         </li>
     </ul>
   </div>

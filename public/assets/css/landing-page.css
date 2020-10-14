@@ -133,6 +133,7 @@ footer.footer {
   border: #7b7b7b solid 1px;
   font-size: 12px;
   padding: 5px 15px;
+  outline: none;
 }
 
 #anime-formsearch .dropdown.dropdown-lg .dropdown-menu {
@@ -140,16 +141,40 @@ footer.footer {
   padding: 6px 20px;
 }
 
-#anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show{
+#anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
   display: flex;
   flex-direction: row;
 }
 
-#anime-formsearch .dropdown.dropdown-lg .dropdown-menu .anime-search-detail {
+#anime-formsearch .dropdown.dropdown-lg button {
+  outline: none;
+  box-shadow:none;
+} 
+
+#anime-formsearch .dropdown.dropdown-lg .anime-search-detail {
   display: flex;
   flex-direction: column;
   width: max-content;
   padding: 6px 20px;
+}
+
+#anime-formsearch .anime-search-button {
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  position: absolute;
+  right: 43px;
+  top: 2px;
+  background: #00aabc;
+  outline: none;
+}
+
+#anime-formsearch .anime-search-button i {
+  color: #ffffff;
+}
+
+#anime-formsearch .dropdown.dropdown-lg .dropdown-menu .anime-search-detail #anime_category {
+  width: 200px;
 }
 
 #anime-formsearch .dropdown.dropdown-lg .dropdown-menu .anime-search-line {
@@ -1010,8 +1035,8 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
 .menu-mobile li a {
   color: #000000;
-  /* font-size: 12px; */
-  font-size: calc(100% - 50px);
+  font-size: 12px;
+  /* font-size: calc(100% - 50px); */
   display: block;
   line-height: 1.5;
 }
@@ -1036,5 +1061,11 @@ ul.list-anime > li div.title-in .anime-score span.score {
 @media (max-width: 991px) {
   .menu-mobile {
       display: block;
+  }
+}
+
+@media (max-width: 320px) { 
+  .menu-mobile li a {
+    font-size: 10px;
   }
 }
