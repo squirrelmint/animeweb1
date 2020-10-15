@@ -47,6 +47,15 @@ class Home extends BaseController
 		echo view('templates/footer.php');
 	}
 
+	public function animedata()
+	{
+		$header_data = [
+			'document_root' => $this->document_root
+		];
+
+		echo view('animedata.php');
+	}
+
 	public function list()
 	{
 		$header_data = [

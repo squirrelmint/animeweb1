@@ -59,13 +59,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="<?=$document_root?>assets/vendor/jquery/jquery.min.js"></script>
-  <script src="<?=$document_root?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
   <script>
     $(document).ready(function(){
 
