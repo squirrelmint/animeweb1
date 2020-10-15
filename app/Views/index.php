@@ -121,7 +121,7 @@
   
   <!-- Icons Grid -->
   <section class="bg-light text-center">
-      <div class="container">
+    <div class="container">
       <div class="row">
         <!-- <div class="col-lg-3">
           <div class="anime-box">
@@ -386,6 +386,16 @@
             </div>
           </li>
         </ul>
+        <button id="anime-loadmore">Load more ...</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="anime-footer" class="bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <p><strong>ดูอนิเมะฟรี</strong> โหลดไวแบบไม่มีสะดุดภาพคมชัดระดับ HD FullHD 4k ครบทุกเรื่องทุกรสดูได้ทุกที่ทุกเวลาทั้งบนมือถือ แท็บเล็ต เครื่องคอมพิวเตอร์ ระบบปฏิบัติการ Android และ IOS ดูอนิเมะใหม่ให้รับชมอีกมากมาย สามารถรับชมฟรีได้ทุกที่ทุกเวลาตลอด 24 ชั่วโมง</p>
       </div>
     </div>
   </section>

@@ -1195,3 +1195,25 @@ ul.list-anime > li div.title-in .anime-score span.score {
     font-size: 10px;
   }
 }
+
+#anime-loadmore {
+  text-transform: uppercase;
+  margin: 2rem auto;
+  background: #00d4ea;
+  border: 3px solid #a9f6ff;
+  padding: 5px 20px;
+  color: #fff;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#anime-loadmore:hover {
+  transform: scale(1.1);
+}
+
+#anime-footer p {
+  text-align: left;
+}
