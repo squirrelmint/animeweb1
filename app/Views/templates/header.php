@@ -58,7 +58,7 @@
             <div class="input-group-btn">
                 <div class="btn-group" role="group">
                   <button type="submit" class="anime-search-button"><i class="fas fa-search"></i></button>
-                  <div class="dropdown dropdown-lg">
+                  <!-- <div class="dropdown dropdown-lg">
                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                       <div class="dropdown-menu dropdown-menu-right" role="menu">
                           <div class="anime-search-detail">
@@ -84,7 +84,7 @@
                           </div>
                           <div class="anime-search-line"></div>
                           <div class="anime-search-detail">
-                            <div class="form-group col-md-12">
+                            <div class="form-group">
                               <label for="anime_category">Category :</label>
                               <select id="anime_category" name="anime_category" class="form-control">
                                 <option selected>Choose...</option>
@@ -93,7 +93,7 @@
                             </div>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
                 </div>
             </div>
           </div>

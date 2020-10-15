@@ -131,9 +131,16 @@ footer.footer {
   min-width: 20%;
   border-radius: 50px;
   border: #7b7b7b solid 1px;
-  font-size: 12px;
+  font-size: 16px;
   padding: 5px 15px;
   outline: none;
+  -webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+#anime-formsearch .btn-group {
+  position: absolute;
 }
 
 #anime-formsearch .dropdown.dropdown-lg .dropdown-menu {
@@ -161,9 +168,9 @@ footer.footer {
 #anime-formsearch .anime-search-button {
   border: none;
   border-radius: 50%;
-  padding: 5px 10px;
+  padding: 4px 9px;
   position: absolute;
-  right: 43px;
+  right: 4px;
   top: 2px;
   background: #00aabc;
   outline: none;
@@ -182,6 +189,116 @@ footer.footer {
   position: relative;
   left: 0;
   padding: 0 5px;
+}
+
+@media (min-width: 321px) and (max-width: 1024px) {
+  .anime-search {
+    width: 41px;
+    font-size: 14px;
+  }
+
+  .anime-search:-moz-placeholder {
+    color: transparent;
+  }
+
+  .anime-search::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  #anime-formsearch .anime-search-button {
+    pointer-events: none;
+    padding: 2px 8px;
+    right: 4px;
+    background-color: transparent;
+  }
+
+  .anime-search:focus:-moz-placeholder  {
+    color: #000;
+  }
+
+  .anime-search:focus::-webkit-input-placeholder {
+    color: #000;
+  }
+
+  #anime-formsearch .anime-search-button i {
+    color: #00aabc;
+  }
+
+  .anime-search:focus {
+    width: 164px;
+  }
+
+  .anime-search:focus ~ .anime-search-button {
+    background-color: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  #anime-formsearch .dropdown.dropdown-lg button {
+    padding: 0;
+  }
+
+  #anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .anime-search {
+    width: 41px;
+    font-size: 14px;
+  }
+
+  .anime-search:-moz-placeholder {
+    color: transparent;
+  }
+
+  .anime-search::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  #anime-formsearch .anime-search-button {
+    pointer-events: none;
+    padding: 2px 8px;
+    right: 4px;
+    background-color: transparent;
+  }
+
+  .anime-search:focus:-moz-placeholder  {
+    color: #000;
+  }
+
+  .anime-search:focus::-webkit-input-placeholder {
+    color: #000;
+  }
+
+  #anime-formsearch .anime-search-button i {
+    color: #00aabc;
+  }
+
+  .anime-search:focus {
+    width: 120px;
+  }
+
+  .anime-search:focus ~ .anime-search-button {
+    background-color: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  #anime-formsearch .dropdown.dropdown-lg button {
+    padding: 0;
+  }
+
+  #anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
+    flex-direction: column;
+  }
+
+  #anime-formsearch .dropdown.dropdown-lg .dropdown-menu.show {
+    flex-direction: column;
+  }
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -464,6 +581,15 @@ header .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score s
 }
 
 @media (max-width: 320px) {
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+  }
+
+  .navbar-expand-lg .navbar-nav {
+    display: none;
+  }
 
   .navbar-collapse {
     flex-grow: inherit;
