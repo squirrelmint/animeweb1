@@ -28,3 +28,222 @@ CRITICAL - 2020-10-19 00:29:49 --> Undefined variable: path_thumbnail
 #6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
 #8 {main}
+CRITICAL - 2020-10-19 01:12:48 --> Undefined variable: category
+#0 C:\xampp\htdocs\animeweb1\app\Views\list.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 17, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('list.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(108): view('list.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->search('one')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 01:18:04 --> Undefined variable: val
+#0 C:\xampp\htdocs\animeweb1\app\Views\list.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 38, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('list.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(108): view('list.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->search('one')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 01:30:21 --> Undefined index: page
+#0 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->animedata()
+#2 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-19 01:39:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''-12', 12' at line 8
+#0 C:\xampp\htdocs\animeweb1\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT\r\n       ...')
+#1 C:\xampp\htdocs\animeweb1\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 C:\xampp\htdocs\animeweb1\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 C:\xampp\htdocs\animeweb1\app\Helpers\pagination_helper.php(8): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...', Array)
+#4 C:\xampp\htdocs\animeweb1\app\Models\Video_Model.php(136): get_pagination('SELECT\r\n       ...', '0', 12, 260)
+#5 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(64): App\Models\Video_Model->get_list_video(1, '', '0')
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->animedata()
+#7 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-10-19 02:03:29 --> Undefined index: page
+#0 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(64): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 64, Array)
+#1 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->animedata()
+#2 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-19 02:34:28 --> Undefined variable: re
+#0 C:\xampp\htdocs\animeweb1\app\Views\index.php(170): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 170, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('index.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(50): view('index.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 02:34:47 --> Undefined index: masubject_name_eng
+#0 C:\xampp\htdocs\animeweb1\app\Views\index.php(170): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 170, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('index.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(50): view('index.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 02:57:59 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(55): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 02:58:41 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(55): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 02:58:49 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(55): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 03:10:16 --> Unknown column 'table_movie.movie_id' in 'on clause'
+#0 C:\xampp\htdocs\animeweb1\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT\r\n       ...')
+#1 C:\xampp\htdocs\animeweb1\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 C:\xampp\htdocs\animeweb1\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 C:\xampp\htdocs\animeweb1\app\Models\Video_Model.php(209): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(55): App\Models\Video_Model->get_anime_data('258')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...')
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-10-19 03:19:36 --> Unknown column 'an_category.moviecate_id' in 'on clause'
+#0 C:\xampp\htdocs\animeweb1\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT\r\n       ...')
+#1 C:\xampp\htdocs\animeweb1\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 C:\xampp\htdocs\animeweb1\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 C:\xampp\htdocs\animeweb1\app\Models\Video_Model.php(261): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 C:\xampp\htdocs\animeweb1\app\Models\Video_Model.php(213): App\Models\Video_Model->get_category_onanime('258')
+#5 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(55): App\Models\Video_Model->get_anime_data('258')
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...')
+#7 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-10-19 03:24:37 --> Undefined variable: ep_data
+#0 C:\xampp\htdocs\animeweb1\app\Views\anime.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('anime.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(67): view('anime.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 03:25:48 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(152): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->player('258', '0')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 03:26:26 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(152): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->player('1', '0')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 03:26:56 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(152): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->player('1', '0')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 03:27:57 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\animeweb1\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\animeweb1\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(151): CodeIgniter\Model->__call('get_anime', Array)
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->player('1', '0')
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-10-19 03:28:33 --> Undefined index: data
+#0 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(156): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 156, Array)
+#1 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->player('1', '0')
+#2 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-10-19 03:39:34 --> Undefined index: movie_picture
+#0 C:\xampp\htdocs\animeweb1\app\Views\anime.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('anime.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(68): view('anime.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('258', 'Kuroko-no-Baske...', '0')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 03:46:02 --> Undefined index: movie_id
+#0 C:\xampp\htdocs\animeweb1\app\Views\anime.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('anime.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(68): view('anime.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('252', 'Digimon-Adventu...', '0')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 03:46:51 --> Undefined index: movie_id
+#0 C:\xampp\htdocs\animeweb1\app\Views\anime.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('anime.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(68): view('anime.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('252', 'Digimon-Adventu...', '0')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 03:47:28 --> Undefined variable: url_name
+#0 C:\xampp\htdocs\animeweb1\app\Views\anime.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 32, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('anime.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(68): view('anime.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('252', 'Digimon-Adventu...', '0')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-19 03:49:29 --> Undefined variable: val
+#0 C:\xampp\htdocs\animeweb1\app\Views\anime.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\animeweb1\system\Common.php(1071): CodeIgniter\View\View->render('anime.php', Array, true)
+#3 C:\xampp\htdocs\animeweb1\app\Controllers\Home.php(68): view('anime.php', Array)
+#4 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(910): App\Controllers\Home->anime('252', 'Digimon-Adventu...', '0')
+#5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}

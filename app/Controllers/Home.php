@@ -32,20 +32,16 @@ class Home extends BaseController
 	public function index()
 	{
 		$list_anime = $this->VideoModel->get_list_video($this->branch);
-		// $list_anime = 
-		// echo '<pre>' . print_r($list_anime['list'], true) . '</pre>';
-		// die;
-
-
-
 
 		$header_data = [
 			'document_root' => $this->document_root
 		];
 		$body_data = [
+			'url_loadmore' => base_url() . '/animedata',
 			'path_thumbnail' => $this->path_thumbnail,
 			'list_anime' => $list_anime['list'],
 			'pagination' => $list_anime,
+
 		];
 
 
@@ -54,24 +50,50 @@ class Home extends BaseController
 		echo view('templates/footer.php');
 	}
 
-	public function anime()
+	public function anime($id, $Name ,$ep_index = 0)
 	{
+		$data_anime = $this->VideoModel->get_anime_data($id);
+		// echo '<pre>' . print_r($data_anime, true) . '</pre>';
+		// die;
 		$header_data = [
 			'document_root' => $this->document_root
 		];
-
+		$body_data = [
+			'url_loadmore' => base_url() . '/animedata',
+			'path_thumbnail' => $this->path_thumbnail,
+			'data_anime' => $data_anime,
+			'ep_index' => $ep_index,
+		];
 		echo view('templates/header.php', $header_data);
-		echo view('anime.php');
+		echo view('anime.php', $body_data);
 		echo view('templates/footer.php');
 	}
 
 	public function animedata()
 	{
-		$list_anime = $this->VideoModel->get_list_video($this->branch,'',$_GET['page']);
+		$list_anime = $this->VideoModel->get_list_video($this->branch, '', $_GET['page']);
 
 
-		// echo '<pre>' . print_r($list_anime['list'], true) . '</pre>';
-		// die;
+
+		$header_data = [
+			'document_root' => $this->document_root,
+			'path_thumbnail' => $this->path_thumbnail,
+			'list_anime' => $list_anime['list'],
+
+
+		];
+
+		echo view('animedata.php', $header_data);
+	}
+
+	public function animedata_search()
+	{
+
+		
+		$list_anime = $this->VideoModel->get_list_video($this->branch, $_GET['keyword'], $_GET['page']);
+
+
+
 		$header_data = [
 			'document_root' => $this->document_root,
 			'path_thumbnail' => $this->path_thumbnail,
@@ -81,6 +103,7 @@ class Home extends BaseController
 
 		echo view('animedata.php', $header_data);
 	}
+
 
 	public function list()
 	{
@@ -93,13 +116,45 @@ class Home extends BaseController
 		echo view('templates/footer.php');
 	}
 
+	public function search($keyword)
+	{
+
+
+		$list_anime = $this->VideoModel->get_list_video($this->branch, $keyword);
+
+
+
+		$header_data = [
+			'document_root' => $this->document_root,
+			'keyword' => $keyword,
+
+		];
+		$body_data = [
+			'url_loadmore' => base_url() . '/animedata_search',
+			'path_thumbnail' => $this->path_thumbnail,
+			'list_anime' => $list_anime['list'],
+			'pagination' => $list_anime,
+			'keyword' => $keyword,
+
+		];
+		echo view('templates/header.php', $header_data);
+		echo view('list.php', $body_data);
+		echo view('templates/footer.php');
+	}
+
+
+
+
+
+
 	public function player($id, $index)
 	{
-		$anime = $this->VideoModel->get_anime($id);
+		$anime = $this->VideoModel->get_anime_data($id);
 		$adsvideo = $this->VideoModel->get_adsvideolist($this->backURL);
-
+// echo '<pre>' . print_r($anime, true) . '</pre>';
+// 		die;
 		if ($index != "") {
-			$playerUrl = $anime['data'][$index]['EpData'];
+			$playerUrl = $anime['ep_data'][$index]['EpData'];
 		}
 
 		$data = [

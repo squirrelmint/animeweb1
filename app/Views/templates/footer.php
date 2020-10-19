@@ -1,31 +1,31 @@
   <!-- menu mobile -->
   <div class="menu-mobile">
     <ul>
-        <li>
-          <a href="">
-            <i class="fas fa-home"></i>HOME
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fas fa-language"></i>SUB-THAI
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fab fa-teamspeak"></i>SOUND-THAI
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="fas fa-film"></i>MOVIE
-          </a>
-        </li>
-        <li>
-          <a href="https://lin.ee/cQkxJQK">
-            <i class="fas fa-comments"></i>CONTRACT
-          </a>
-        </li>
+      <li>
+        <a href="">
+          <i class="fas fa-home"></i>HOME
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fas fa-language"></i>SUB-THAI
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fab fa-teamspeak"></i>SOUND-THAI
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fas fa-film"></i>MOVIE
+        </a>
+      </li>
+      <li>
+        <a href="https://lin.ee/cQkxJQK">
+          <i class="fas fa-comments"></i>CONTRACT
+        </a>
+      </li>
     </ul>
   </div>
 
@@ -60,7 +60,7 @@
   </footer>
 
   <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
 
       var mySwiper = new Swiper('#HomeSlide', {
         loop: true,
@@ -81,8 +81,16 @@
       })
 
     });
+
+    function goView(id, name , ep) {
+    
+
+      window.location.href = "/anime/" + id + '/' + name + '/' + ep;
+
+
+    }
   </script>
 
-</body>
+  </body>
 
-</html>
+  </html>

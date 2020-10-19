@@ -154,10 +154,11 @@
                 } else {
                   $movie_picture = $path_thumbnail.$val['movie_picture'];
                 }
+
+                $url_name = urlencode(str_replace(' ','-',$val['movie_thname']));
                 ?>
 
-                <a href="">
-
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" >
                   <img src="<?= $movie_picture ?>">
                 </a>
               </div>
@@ -167,7 +168,7 @@
                   <span class="score"><?= $val['movie_ratescore'] ?></span>
                 </div>
                 <h2>
-                  <a href="/public/manga/index/title/31/Naruto" tabindex="-1"><?= $val['movie_thname'] ?></a>
+                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1"><?= $val['movie_thname'] ?></a>
                 </h2>
               </div>
             </li>
@@ -201,7 +202,7 @@
         if (track_click <= total_pages) //user click number is still less than total pages
         {
           //post page number and load returned data into result element
-          $.get('animedata', {
+          $.get('<?php echo $url_loadmore?>', {
             'page': track_click
           }, function(data) {
 
