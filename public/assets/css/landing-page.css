@@ -690,6 +690,10 @@ header .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score s
   font-size: 22px;
 }
 
+#anime-list {
+  flex-direction: column;
+}
+
 ul.list-anime {
   display: -webkit-box;
   display: -webkit-flex;
