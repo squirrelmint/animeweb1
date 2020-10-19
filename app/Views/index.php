@@ -142,9 +142,7 @@
         <ul id="list-anime" class="list-anime">
 
           <?PHP
-          foreach ($list_anime as $val) {
-            // echo '<pre>' . print_r($val, true) . '</pre>';
-            // die;
+            foreach ($list_anime as $val) {
           ?>
             <li>
               <div class="anime-box">
