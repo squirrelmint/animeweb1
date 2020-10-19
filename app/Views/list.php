@@ -316,7 +316,7 @@
           if(track_click >= total_pages-1) //compare user click with page number
           {
             //reached end of the page yet? disable load button
-            $("#anime-loadmore").attr("disabled", "disabled");
+            $("#anime-loadmore").hide();
           }
         }
 
