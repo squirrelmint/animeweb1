@@ -24,6 +24,7 @@ class App extends BaseConfig
 	public $baseURL = 'http://localhost:83/';
 	public $document_root = 'http://localhost:83/public/';
 
+
 	/*
 	|--------------------------------------------------------------------------
 	| Index File

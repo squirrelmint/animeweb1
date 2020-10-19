@@ -12,17 +12,17 @@ use CodeIgniter\Model;
 class Video_Model extends Model
 {
 
-    protected $table_movie = 'mo_movie';
-    protected $table_category = 'mo_category';
-    protected $mo_moviecate = 'mo_moviecate';
-    protected $table_vdoads = 'mo_adsvideo';
+    protected $table_movie = 'an_movie';
+    protected $table_category = 'an_category';
+    protected $an_moviecate = 'an_moviecate';
+    protected $table_vdoads = 'an_adsvideo';
     protected $pathAdsVideo = 'movie/adsvdo';
     protected $ads = 'ads';
-    protected $report_movie = 'movie_report';
-    protected $live_stream = 'mo_livestream';
+    protected $report_movie = 'an_report';
+    protected $live_stream = 'an_livestream';
     protected $setting = 'setting';
     protected $content = 'content';
-    protected $mo_request = 'mo_request';
+    protected $an_request = 'an_request';
     protected $seo = 'seo';
     public $backURL = "https://backend.gumovie1.com/public/";
     private $path_filelogo;
@@ -73,8 +73,8 @@ class Video_Model extends Model
             *
             FROM
             $this->table_category
-            INNER JOIN $this->mo_moviecate ON $this->mo_moviecate.category_id = $this->table_category.category_id
-            INNER JOIN $this->table_movie ON $this->mo_moviecate.movie_id = $this->table_movie.movie_id
+            INNER JOIN $this->an_moviecate ON $this->an_moviecate.category_id = $this->table_category.category_id
+            INNER JOIN $this->table_movie ON $this->an_moviecate.movie_id = $this->table_movie.movie_id
             WHERE
             `$this->table_category`.branch_id = ? AND $this->table_movie.movie_active = '1'
             GROUP BY $this->table_category.category_id";
@@ -103,6 +103,7 @@ class Video_Model extends Model
 
     public function get_list_video($branchid, $keyword = "", $page = 1)
     {
+
 
         $sql_where = " ";
 
@@ -255,121 +256,9 @@ class Video_Model extends Model
 
     }
 
-    //Get database livestream
-    public function  get_path_livesteram()
-    {
+  
 
-        $sql = "SELECT * FROM `$this->live_stream`";
-
-        $query = $this->db->query($sql);
-        return $query->getResultArray();
-
-    }
-
-    //Get video livestream
-    public function  get_video_livesteram($id)
-    {
-
-        $sql = "SELECT * FROM $this->live_stream WHERE `$this->live_stream`.livestream_id = ?";
-
-        $query = $this->db->query($sql, [$id]);
-        return $query->getRowArray();
-
-    }
-
-    //Get setting show fontend 
-    public function  get_setting($branch_id)
-    {
-
-        $sql = "SELECT * FROM `$this->setting` WHERE branch_id = '$branch_id' ";
-        $query = $this->db->query($sql);
-        return $query->getRowArray();
-
-    }
-
-    //Get Content
-    public function  get_content($branch_id, $id)
-    {
-
-        $sql = "SELECT * FROM `$this->content` WHERE branch_id = '$branch_id' AND content_id  = '$id' ";
-
-        $query = $this->db->query($sql);
-
-        return $query->getRowArray();
-
-    }
-
-    //Get List Content
-    public function  get_listcontent($branch_id)
-    {
-
-        $sql = "SELECT * FROM `$this->content` WHERE branch_id = '$branch_id'";
-
-        $query = $this->db->query($sql);
-        return $query->getResultArray();
-
-    }
-
-
-    //Get Seo
-    public function  get_seo($branch_id)
-    {
-
-        $sql = "SELECT * FROM `$this->seo` WHERE branch_id = '$branch_id'";
-
-        $query = $this->db->query($sql);
-        return $query->getRowArray();
-
-    }
-
-    //Get Name video
-    public function get_namevideo($id)
-    {
-
-        $sql = "SELECT movie_thname,movie_des FROM `$this->table_movie` WHERE movie_id = '$id'";
-
-        $query = $this->db->query($sql);
-        return $query->getRowArray();
-
-    }
-
-    //Get Name video
-    public function get_title($branch)
-    {
-
-        $sql = "SELECT setting_title,setting_description FROM `$this->setting` WHERE branch_id = '$branch'";
-
-        $query = $this->db->query($sql);
-
-        return $query->getRowArray();
-
-    }
-
-    //Get Img_og
-    public function get_img_og($id)
-    {
-
-        $sql = "SELECT movie_picture FROM `$this->table_movie` WHERE movie_id = '$id' ";
-        $query = $this->db->query($sql);
-        return $query->getRowArray();
-
-    }
-
-    public function  get_listyear($branch_id)
-    {
-
-        $sql = "SELECT 
-                    movie_year 
-                FROM `$this->table_movie` 
-                WHERE branch_id = '$branch_id' 
-                GROUP BY movie_year
-                ORDER BY movie_year DESC ";
-
-        $query = $this->db->query($sql);
-        return $query->getResultArray();
-
-    }
-
+    
     public function get_id_video_bycategory($id, $branch_id, $page = 1, $keyword = "")
     {
 
@@ -382,11 +271,11 @@ class Video_Model extends Model
         $sql = "SELECT
                     *
                 FROM
-                    mo_moviecate
-                INNER JOIN mo_movie ON mo_moviecate.movie_id = mo_movie.movie_id 
+                    an_moviecate
+                INNER JOIN an_movie ON an_moviecate.movie_id = an_movie.movie_id 
                 WHERE 
-                    mo_moviecate.category_id = '$id' 
-                    AND mo_moviecate.branch_id = '$branch_id' ";
+                    an_moviecate.category_id = '$id' 
+                    AND an_moviecate.branch_id = '$branch_id' ";
 
         $query = $this->db->query($sql);
         $total = count($query->getResultArray());
@@ -396,9 +285,13 @@ class Video_Model extends Model
 
     }
 
-
-    public function get_id_video_byyear($id, $branch_id, $page = 1, $keyword = "")
+    public function get_list_video_search($keyword, $branch_id, $page)
     {
+        if($page){
+            $page=$page;
+        }else{
+            $page=1;
+        }
 
         $sql_where = " ";
         if ($keyword != "") {
@@ -408,30 +301,15 @@ class Video_Model extends Model
         $sql = "SELECT
                     *
                 FROM
-                   mo_movie
-                WHERE movie_year = $id AND branch_id = '$branch_id' 
-                ORDER BY `$this->table_movie`.movie_year DESC";
+                    $this->table_movie
+                WHERE
+                    `$this->table_movie`.branch_id = '$branch_id' AND `$this->table_movie`.movie_active = '1' $sql_where ";
 
         $query = $this->db->query($sql);
         $total = count($query->getResultArray());
         $perpage = 28;
 
         return get_pagination($sql, $page, $perpage, $total);
-    }
-
-    public function get_id_video_random($branch_id)
-    {
-
-        $sql = "SELECT
-                    *
-                FROM
-                    `$this->table_movie`
-                WHERE
-                    `$this->table_movie`.branch_id = '$branch_id'
-                ORDER BY RAND()  limit 4";
-
-        $query = $this->db->query($sql);
-        return $query->getResultArray();
 
     }
 
@@ -465,38 +343,17 @@ class Video_Model extends Model
 
     }
 
-    public function get_list_video_search($keyword, $branch_id, $page)
-    {
-        $sql_where = " ";
-        if ($keyword != "") {
-            $sql_where = " AND `$this->table_movie`.movie_thname LIKE '%$keyword%' ";
-        }
-
-        $sql = "SELECT
-                    *
-                FROM
-                    $this->table_movie
-                WHERE
-                    `$this->table_movie`.branch_id = '$branch_id' AND `$this->table_movie`.movie_active = '1' $sql_where ";
-
-        $query = $this->db->query($sql);
-        $total = count($query->getResultArray());
-        $perpage = 28;
-
-        return get_pagination($sql, $page, $perpage, $total);
-
-    }
-
+   
     //ขอหนัง 
     public function save_requests($branch, $movie)
     {
 
-        $bd =  $this->db->table($this->mo_request);
+        $bd =  $this->db->table($this->an_request);
         $this->db->transBegin();
 
         $data =  [
             'branch_id' => $branch,
-            'mo_request' => $movie
+            'an_request' => $movie
         ];
 
         try {
@@ -577,8 +434,8 @@ class Video_Model extends Model
 
         $this->db->simpleQuery('SET @@group_concat_max_len = 100000');
         $sql = "SELECT
-                    mo_category.category_id,
-                    mo_category.category_name,
+                    an_category.category_id,
+                    an_category.category_name,
                     GROUP_CONCAT(
                         mo.movie_id,
                         '{-}',
@@ -595,28 +452,28 @@ class Video_Model extends Model
                         mo.movie_picture SEPARATOR '|'
                     ) AS movie
                 FROM
-                    mo_category
+                    an_category
                 LEFT JOIN (
                     SELECT
-                        mo_movie.movie_id,
-                        mo_movie.movie_thname,
-                        mo_movie.movie_picture,
-                        mo_movie.movie_type,
-                        mo_movie.movie_quality,
-                        mo_movie.movie_ratescore,
+                        an_movie.movie_id,
+                        an_movie.movie_thname,
+                        an_movie.movie_picture,
+                        an_movie.movie_type,
+                        an_movie.movie_quality,
+                        an_movie.movie_ratescore,
                         CASE
-                            WHEN mo_movie.movie_view IS NULL THEN '0'
-                            ELSE mo_movie.movie_view
+                            WHEN an_movie.movie_view IS NULL THEN '0'
+                            ELSE an_movie.movie_view
                         END AS movie_view,
-                        mo_moviecate.category_id
+                        an_moviecate.category_id
                     FROM
-                        mo_movie
-                    INNER JOIN mo_moviecate ON mo_moviecate.movie_id = mo_movie.movie_id
-                    GROUP BY mo_movie.movie_id   
-                ) mo ON mo.category_id = mo_category.category_id
-                WHERE mo_category.branch_id = '$branch' AND mo.movie_id IS NOT NULL
-                GROUP BY mo_category.category_id
-                ORDER BY count(mo_category.category_id) DESC
+                        an_movie
+                    INNER JOIN an_moviecate ON an_moviecate.movie_id = an_movie.movie_id
+                    GROUP BY an_movie.movie_id   
+                ) mo ON mo.category_id = an_category.category_id
+                WHERE an_category.branch_id = '$branch' AND mo.movie_id IS NOT NULL
+                GROUP BY an_category.category_id
+                ORDER BY count(an_category.category_id) DESC
                 LIMIT 4; ";
 
       
@@ -625,25 +482,6 @@ class Video_Model extends Model
     
     }
 
-    public function get_list_video_zoom( $branchid, $page)
-    {
-
-        $sql = "SELECT 
-                    * 
-                FROM 
-                    $this->table_movie 
-                WHERE 
-                    `$this->table_movie`.branch_id = '$branchid' 
-                    AND LOWER(`$this->table_movie`.movie_quality) = 'zoom' 
-                ORDER BY `mo_movie`.movie_id DESC";
-
-        $query = $this->db->query($sql);
-        $total = count($query->getResultArray());
-        $perpage = 28;
-
-        return get_pagination($sql, $page, $perpage, $total);
-
-    }
 
 
 
