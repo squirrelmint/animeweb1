@@ -316,6 +316,15 @@ footer.footer {
   padding-left: 1.2rem;
 }
 
+.navbar-expand-lg .navbar-nav .dropdown-item {
+  text-transform: uppercase;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-item:active {
+  background: #00aabc;
+  font-weight: 700;
+}
+
 header .swiper-container {
   width: 100%;
   height:550px;

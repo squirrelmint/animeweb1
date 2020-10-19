@@ -52,8 +52,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">SOUND-THAI</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">MOVIE</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">CONTRACT</a>
