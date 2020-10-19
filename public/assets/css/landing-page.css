@@ -659,6 +659,15 @@ header .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score s
   
 }
 
+#anime-banners {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#anime-banners img.banners {
+  width: 100%;
+}
+
 .anime-content {
   padding: 2rem 0;
 }
