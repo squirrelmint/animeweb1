@@ -11,7 +11,7 @@
 <!-- Icons Grid -->
 <section class="bg-light text-center">
   <div class="container">
-    <div class="row">
+    <div id="anime-list" class="row">
       <div class="anime-title-list">
         <?php
         if (!empty($category)) {
@@ -47,7 +47,7 @@
                 $movie_picture = $path_thumbnail . $val['movie_picture'];
               }
 
-              $url_name = urlencode(str_replace(' ','-',$val['movie_thname']));
+              $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
 
               ?>
 
@@ -117,9 +117,10 @@
         if (track_click >= total_pages - 1) //compare user click with page number
         {
           //reached end of the page yet? disable load button
-          $("#anime-loadmore").attr("disabled", "disabled");
+          $("#anime-loadmore").hide();
         }
       }
+
 
     });
   });

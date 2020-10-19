@@ -316,6 +316,15 @@ footer.footer {
   padding-left: 1.2rem;
 }
 
+.navbar-expand-lg .navbar-nav .dropdown-item {
+  text-transform: uppercase;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-item:active {
+  background: #00aabc;
+  font-weight: 700;
+}
+
 header .swiper-container {
   width: 100%;
   height:550px;
@@ -681,6 +690,10 @@ header .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score s
   font-size: 22px;
 }
 
+#anime-list {
+  flex-direction: column;
+}
+
 ul.list-anime {
   display: -webkit-box;
   display: -webkit-flex;
@@ -758,6 +771,11 @@ ul.list-anime > li div.title-in h2 {
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 ul.list-anime > li div.title-in h2:hover {

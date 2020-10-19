@@ -142,9 +142,7 @@
         <ul id="list-anime" class="list-anime">
 
           <?PHP
-          foreach ($list_anime as $val) {
-            // echo '<pre>' . print_r($val, true) . '</pre>';
-            // die;
+            foreach ($list_anime as $val) {
           ?>
             <li>
               <div class="anime-box">
@@ -228,7 +226,7 @@
           if (track_click >= total_pages - 1) //compare user click with page number
           {
             //reached end of the page yet? disable load button
-            $("#anime-loadmore").attr("disabled", "disabled");
+            $("#anime-loadmore").hide();
           }
         }
 
