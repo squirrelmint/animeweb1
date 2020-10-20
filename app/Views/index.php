@@ -108,24 +108,19 @@
     </div>
   </header>
 
-	<?php foreach ($ads as $value) {
-					if ($value['ads_position'] == "1") {
-				?>
+
 
   <section id="anime-banners" class="bg-light text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-12 ">
-          <img class="banners" src='<?php echo  $backURL . "ads/" . $value['ads_picture']; ?>'>
+          <img class="banners" src=''>
         </div>
       </div>
     </div>
   </section>
 
-  <?php } else {
-					}
-				}
-				?>
+
 
   <section class="anime-content bg-light text-center">
     <div class="container">
@@ -159,8 +154,8 @@
                 $url_name = urlencode(str_replace(' ','-',$val['movie_thname']));
                 ?>
 
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" >
-                  <img src="<?= $movie_picture ?>">
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
+                  <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
               </div>
               <div class="title-in">
@@ -169,7 +164,7 @@
                   <span class="score"><?= $val['movie_ratescore'] ?></span>
                 </div>
                 <h2>
-                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1"><?= $val['movie_thname'] ?></a>
+                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>"><?= $val['movie_thname'] ?></a>
                 </h2>
               </div>
             </li>

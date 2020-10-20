@@ -95,6 +95,7 @@
       slidesPerView: 4,
       spaceBetween: 30,
       centeredSlides: true,
+      initialSlide: '<?=$ep_index?>',
 
       // Navigation arrows
       navigation: {
