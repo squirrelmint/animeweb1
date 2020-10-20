@@ -133,12 +133,6 @@
   <section class="bg-light text-center">
     <div class="container">
       <div class="row">
-        <!-- <div class="col-lg-3">
-          <div class="anime-box">
-              <img scr="https://images-na.ssl-images-amazon.com/images/I/71nQwqxnYZL._AC_SY741_.jpg">
-            </div>
-        </div> -->
-
         <ul id="list-anime" class="list-anime">
 
           <?PHP
@@ -154,9 +148,8 @@
                 }
                 ?>
 
-                <a href="">
-
-                  <img src="<?= $movie_picture ?>">
+                <a href="" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
+                  <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
               </div>
               <div class="title-in">
@@ -165,7 +158,7 @@
                   <span class="score"><?= $val['movie_ratescore'] ?></span>
                 </div>
                 <h2>
-                  <a href="/public/manga/index/title/31/Naruto" tabindex="-1"><?= $val['movie_thname'] ?></a>
+                  <a href="/public/manga/index/title/31/Naruto" tabindex="-1" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>"><?= $val['movie_thname'] ?></a>
                 </h2>
               </div>
             </li>
