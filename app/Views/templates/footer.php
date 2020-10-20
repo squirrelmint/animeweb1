@@ -1,4 +1,12 @@
   <!-- menu mobile -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
   <div class="menu-mobile">
     <ul>
       <li>
@@ -17,8 +25,8 @@
         </a>
       </li>
       <li>
-        <a href="">
-          <i class="fas fa-film"></i>MOVIE
+        <a href="#" onclick="openNav()">
+          <i class="fas fa-film"></i>CATEGORY
         </a>
       </li>
       <li>
@@ -83,11 +91,17 @@
     });
 
     function goView(id, name , ep) {
-    
-
       window.location.href = "/anime/" + id + '/' + name + '/' + ep;
+    }
 
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
 
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
     }
   </script>
 
