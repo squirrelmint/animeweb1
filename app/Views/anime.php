@@ -29,7 +29,7 @@
 
 
                 <div class="swiper-slide">
-                  <a onclick="goView('<?= ($data_anime['movie_id']) ?>','<?= $url_name ?> ','<?= $key ?> ')" tabindex="-1">
+                  <a onclick="goView('<?= ($data_anime['movie_id']) ?>','<?= $url_name ?>','<?= $key ?> ')" tabindex="-1">
                     <img src="<?= $movie_picture ?>"><br>
                     <?= $val['NameEp'] ?>
                   </a>

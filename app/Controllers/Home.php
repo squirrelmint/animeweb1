@@ -23,7 +23,7 @@ class Home extends BaseController
 		$this->branch = 1;
 
 		// Directory
-		$this->path_ads = $this->backURL . 'banner/';
+		$this->path_ads = $this->backURL . 'banners/';
 		$this->path_setting = $this->backURL . 'setting/';
 
 		helper(['url', 'pagination']);

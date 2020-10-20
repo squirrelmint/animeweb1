@@ -108,15 +108,24 @@
     </div>
   </header>
 
+	<?php foreach ($ads as $value) {
+					if ($value['ads_position'] == "1") {
+				?>
+
   <section id="anime-banners" class="bg-light text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-12 ">
-          <img class="banners" src="https://gurubac.com//images/banner.jpg?692d2df5f9f9837e6112a0e772232da7">
+          <img class="banners" src='<?php echo  $backURL . "ads/" . $value['ads_picture']; ?>'>
         </div>
       </div>
     </div>
   </section>
+
+  <?php } else {
+					}
+				}
+				?>
 
   <section class="anime-content bg-light text-center">
     <div class="container">
