@@ -40,7 +40,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="<?= base_url().'/public/logo/Logo-Anime-8k-1.png' ?> ">
+        <img style="   height: 150px;" src="<?= base_url().'/public/logo/Logo-Anime-8k-1.png' ?> ">
       </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">

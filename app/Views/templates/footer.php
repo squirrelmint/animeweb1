@@ -42,7 +42,7 @@
         </a>
       </li>
       <li>
-        <a href="https://lin.ee/cQkxJQK">
+        <a href="#" data-toggle="modal" data-target="#anime-contract">
           <i class="fas fa-comments"></i>CONTRACT
         </a>
       </li>

@@ -144,7 +144,7 @@ class Video_Model extends Model
                     AND $this->table_movie.movie_active = '1' 
                     AND $this->an_moviecate.category_id = '$cate_id' 
                      
-                ORDER BY `$this->table_movie`.movie_id DESC";
+                ORDER BY `$this->table_movie`.movie_create DESC";
         } else {
 
             $sql = "SELECT
@@ -156,7 +156,7 @@ class Video_Model extends Model
                     AND `$this->table_movie`.movie_type IN ('mo','se') 
                     AND $this->table_movie.movie_active = '1' " .
                 $sql_where .
-                "ORDER BY `$this->table_movie`.movie_id DESC";
+                "ORDER BY `$this->table_movie`.movie_create DESC";
         }
         $query = $this->db->query($sql);
 

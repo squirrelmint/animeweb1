@@ -25,9 +25,9 @@
               }
               ?>
               <div class="slider-detail">
-                <span>APR 6, 2019</span>
+
+                <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
                 <span><?= $val['ep_count']?> EPISODES</span>
-                <span>RATING R - 17 +</span>
               </div>
 
               <p class="slider-description">

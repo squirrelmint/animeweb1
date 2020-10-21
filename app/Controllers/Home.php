@@ -26,7 +26,7 @@ class Home extends BaseController
 		$this->path_ads = $this->backURL . 'banners/';
 		$this->path_setting = $this->backURL . 'setting/';
 
-		helper(['url', 'pagination']);
+		helper(['url', 'pagination', 'dateformat']);
 	}
 
 	public function index()
@@ -35,11 +35,12 @@ class Home extends BaseController
 		$list_anime = $this->VideoModel->get_list_video($this->branch);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
+		$date = get_date($slide_anime[0]['movie_create']);
+		// echo '<pre>' . print_r($date['DateEng'], true) . '</pre>';
+		// die;
 
 
-		$a= date_create ($slide_anime[0]['movie_create']);
-		echo '<pre>' . print_r(date_format($a,"Y/m/m/m H:i:s") ,true) . '</pre>';
-		die;
+
 		$chk_act = [
 			'home' => 'active',
 			'subthai' => '',
@@ -61,7 +62,7 @@ class Home extends BaseController
 			'ads' => $ads,
 			'path_ads' => $this->path_ads,
 			'slide_anime' => $slide_anime,
-
+			'DateEng' => $date['DateEng'],
 
 
 		];
@@ -210,13 +211,13 @@ class Home extends BaseController
 			'category' => 'active',
 		];
 
-	
+
 		$header_data = [
 			'document_root' => $this->document_root,
 			'list_category' => $list_category,
 			'list_anime' => $list_anime,
-			'cate_id' =>$cate_id,
-			
+			'cate_id' => $cate_id,
+
 			'chk_act' => $chk_act,
 		];
 		$body_data = [
