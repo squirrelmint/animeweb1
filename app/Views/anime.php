@@ -1,13 +1,21 @@
-<section id="anime-banners" class="bg-light text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-12 ">
-        <img class="banners" src="https://gurubac.com//images/banner.jpg?692d2df5f9f9837e6112a0e772232da7">
-      </div>
-    </div>
-  </div>
-</section>
+<?php foreach ($ads as $value) {
+  if ($value['ads_position'] == "1") {
+?>
 
+    <section id="anime-banners" class="bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 ">
+            <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<?php } else {
+  }
+}
+?>
 <!-- Icons Grid -->
 <section id="anime-video" class="bg-dark text-center">
   <div class="container">
@@ -17,7 +25,7 @@
       } else {
         $movie_picture = $path_thumbnail . $data_anime['movie_picture'];
       }
-      $url_name = urlencode(str_replace(' ','-',$data_anime['movie_thname']))
+      $url_name = urlencode(str_replace(' ', '-', $data_anime['movie_thname']))
       ?>
       <div id="anime-player">
         <iframe id="player" class="player" src="<?= base_url('player/' . $data_anime['movie_id'] . '/' . $ep_index) ?>" scrolling="no" frameborder="0" allowfullscreen="yes"></iframe>
@@ -25,7 +33,7 @@
           <div id="NextEP" class="swiper-container">
             <div class="swiper-wrapper">
 
-              <?php foreach ($data_anime['ep_data'] as $key =>$val) { ?>
+              <?php foreach ($data_anime['ep_data'] as $key => $val) { ?>
 
 
                 <div class="swiper-slide">
@@ -51,7 +59,9 @@
           <h1 class="anime-title"><?= $data_anime['movie_thname'] ?> </h1>
           <div class="anime-category">
             <?php foreach ($data_anime['cate_data'] as $val) { ?>
-              <span class="cate-name"><?= $val['category_name'] ?></span>
+              <a href="<?php echo base_url().'/category/'.$val['category_id'].'/'.$val['category_name'] ?>" target="_blank">
+                <span class="cate-name"><?= $val['category_name'] ?></span>
+              </a>
 
             <?php } ?>
 
@@ -78,16 +88,24 @@
   </div>
 </section>
 
-<section id="anime-banners" class="bg-light text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-12 ">
-        <img class="banners" src="https://gurubac.com//images/banner.jpg?692d2df5f9f9837e6112a0e772232da7">
-      </div>
-    </div>
-  </div>
-</section>
+<?php foreach ($ads as $value) {
+  if ($value['ads_position'] == "2") {
+?>
 
+    <section id="anime-banners" class="bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 ">
+            <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<?php } else {
+  }
+}
+?>
 <script>
   window.onload = function() {
 

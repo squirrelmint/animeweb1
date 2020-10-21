@@ -1,12 +1,21 @@
-<section id="anime-banners" class="text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-12 ">
-        <img class="banners" src="https://gurubac.com//images/banner.jpg?692d2df5f9f9837e6112a0e772232da7">
+<?php foreach ($ads as $value) {
+  if ($value['ads_position'] == "1") {
+?>
+
+    <section id="anime-banners" class="bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 ">
+            <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+<?php } else {
+  }
+}
+?>
 
 <!-- Icons Grid -->
 <section class="bg-light text-center">
@@ -14,15 +23,14 @@
     <div id="anime-list" class="row">
       <div class="anime-title-list">
         <?php
-        if (!empty($category)) {
+        if (!empty($cate_name)) {
         ?>
-          <h1>แอคชั่น</h1>
+          <h1><?= $cate_name ?></h1>
 
         <?php
         }
-        ?>
-        <?php
-        if (!empty($keyword)) {
+        
+        else if (!empty($keyword)) {
         ?>
 
           <h1>คุณกำลังค้นหา : <?= $keyword ?> </h1>
@@ -74,7 +82,24 @@
     </div>
   </div>
 </section>
+<?php foreach ($ads as $value) {
+  if ($value['ads_position'] == "2") {
+?>
 
+    <section id="anime-banners" class="bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 ">
+            <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<?php } else {
+  }
+}
+?>
 <script>
   $(document).ready(function() {
     var track_click = 2; //track user click on "load more" button, righ now it is 0 click

@@ -84,11 +84,16 @@
 
     function goView(id, name , ep) {
     
-
       window.location.href = "/anime/" + id + '/' + name + '/' + ep;
 
+    }
+
+    function goCate(id, name) {
+
+      window.location.href = "/category/" + id + '/' + name ;
 
     }
+    
   </script>
 
   </body>

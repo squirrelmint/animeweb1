@@ -34,7 +34,7 @@ class Database extends \CodeIgniter\Database\Config
 		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => '',
-		'database' => 'anime8k',
+		'database' => 'new_variety2',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

@@ -39,29 +39,39 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">
+        <img src="<?= base_url().'/public/logo/Logo-Anime-8k-1.png' ?> ">
+      </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">SUB-THAI</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">SOUND-THAI</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CONTRACT</a>
-            </li>
+          <li class="nav-item active">
+            <a class="nav-link" href=" <?php echo base_url() ?> ">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SUB-THAI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SOUND-THAI</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <?php foreach ($list_category as $val) {
+              ?>
+                <a class="dropdown-item" onclick="goCate('<?= ($val['category_id']) ?>','<?= $val['category_name'] ?>')"><?= $val['category_name'] ?></a>
+
+
+
+              <?php
+              } ?>
+
+
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTRACT</a>
+          </li>
         </ul>
         <form id="anime-formsearch">
           <div class="input-group" id="adv-search">
@@ -146,7 +156,13 @@
 
       function goSearch() {
 
-        window.location.href = "/search/" + $("#anime-search").val();
+        var animesearch = $("#anime-search").val()
+
+        if (animesearch) {
+          window.location.href = "/search/" + $("#anime-search").val();
+        } else {
+          window.location.href = "<?= base_url() ?>";
+        }
 
       }
     });

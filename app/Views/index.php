@@ -4,97 +4,62 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">
-          <div class="slider-area">
-            <h2 class="title-slider">KIMETSU NO YAIBA</h2>
-            <span class="cate-small">Action</span>
-            <span class="cate-small">Demons</span>
-            <span class="cate-small">Historical</span>
-            <span class="cate-small">shounen</span>
+        <?PHP
 
-            <div class="slider-detail">
-              <span>APR 6, 2019</span>
-              <span>EPISODES : 26</span>
-              <span>RATING R - 17 +</span>
-            </div>
+        foreach ($slide_anime as $val) {
+          $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
+        ?>
 
-            <p class="slider-description">
-              เรื่องราวเกิดขึ้นในประเทศญี่ปุ่นยุคไทโช คามาโดะ ทันจิโร่ เป็นเด็กหนุ่มผู้มีจิตใจอ่อนโยนและเฉลียวฉลาด ในฐานะลูกชายคนโตของครอบครัวคนเผาถ่าน เขาจึงเป็นหัวเรี่ยวหัวแรงในการหารายได้เลี้ยงดูครอบครัวจากการเผาถ่านไปขายหลังจากพ่อของเขาเสียชีวิต ทุกสิ่งทุกอย่างได้เปลี่ยนแปลงไปเมื่อมีอสูรบุกเข้ามาสังหารคนในครอบครัวของทันจิโร่ เหลือแต่เพียงเขาและน้องสาวที่ชื่อเนะซึโกะเท่านั้น เนะซึโกะที่รอดตายมาได้กลับกลายเป็นอสูรไป ทว่าก็น่าประหลาดใจที่เธอยังคงมีความคิดและการแสดงอารมณ์อย่างมนุษย์หลงเหลืออยู่ หลังจากที่ทันจิโร่ได้ต่อสู้กับโทมิโอะกะ กิยู นักล่าอสูรที่เดินทางผ่านมาและต้องการจะฆ่าเนะซึโกะที่กลายเป็นอสูรไปแล้ว เขาจึงตัดสินใจที่จะเป็นนักล่าอสูรตามคำชักชวนของกิยู เพื่อหาทางทำให้น้องสาวกลับมาเป็นมนุษย์ และชำระแค้นจากอสูรที่ฆ่าคนในครอบครัวของเขาให้จงได้
+          <div class="swiper-slide">
+            <div class="slider-area">
+              <h2 class="title-slider"><?= $val['movie_thname'] ?></h2>
+              <?PHP
+
+              foreach ($val['cate_data'] as $cate_val) {
+              ?>
+                <a href="<?php echo base_url() . '/category/' . $cate_val['category_id'] . '/' . $cate_val['category_name'] ?>" target="_blank">
+                  <span class="cate-small"><?= $cate_val['category_name'] ?></span>
+                </a>
+              <?php
+
+              }
+              ?>
+              <div class="slider-detail">
+                <span>APR 6, 2019</span>
+                <span>EPISODES : 26</span>
+                <span>RATING R - 17 +</span>
+              </div>
+
+              <p class="slider-description">
+
+              <?= $val['movie_des'] ?>
+
+
             </p>
 
-            <div class="slider-footer">
-              <button class="slider-play">
-                <i class="fas fa-play"></i>
-              </button>
-              <div class="score-line"></div>
-              <div class="slider-score">
-                <span>Score</span>
-                8.69
+              <div class="slider-footer">
+                <button class="slider-play" onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
+                  <i class="fas fa-play"></i>
+                </button>
+                <div class="score-line"></div>
+                <div class="slider-score">
+                  <span>Score</span>
+                  <?= $val['movie_ratescore'] ?> /100
+
+                </div>
               </div>
             </div>
+             
+            <img src="<?= base_url(). $val['slide_img'] ?> ">
           </div>
-          <img src="https://images8.alphacoders.com/101/thumb-1920-1011917.jpg">
-        </div>
-        <div class="swiper-slide">
-          <div class="slider-area">
-            <h2 class="title-slider">NARUTO</h2>
-            <span class="cate-small">Action</span>
-            <span class="cate-small">NARUTO</span>
-            <span class="cate-small">Historical</span>
-            <span class="cate-small">shounen</span>
 
-            <div class="slider-detail">
-              <span>APR 6, 2019</span>
-              <span>EPISODES : 26</span>
-              <span>RATING R - 17 +</span>
-            </div>
 
-            <p class="slider-description">
-              เรื่องราวเกิดขึ้นในประเทศญี่ปุ่นยุคไทโช คามาโดะ ทันจิโร่ เป็นเด็กหนุ่มผู้มีจิตใจอ่อนโยนและเฉลียวฉลาด ในฐานะลูกชายคนโตของครอบครัวคนเผาถ่าน เขาจึงเป็นหัวเรี่ยวหัวแรงในการหารายได้เลี้ยงดูครอบครัวจากการเผาถ่านไปขายหลังจากพ่อของเขาเสียชีวิต ทุกสิ่งทุกอย่างได้เปลี่ยนแปลงไปเมื่อมีอสูรบุกเข้ามาสังหารคนในครอบครัวของทันจิโร่ เหลือแต่เพียงเขาและน้องสาวที่ชื่อเนะซึโกะเท่านั้น เนะซึโกะที่รอดตายมาได้กลับกลายเป็นอสูรไป ทว่าก็น่าประหลาดใจที่เธอยังคงมีความคิดและการแสดงอารมณ์อย่างมนุษย์หลงเหลืออยู่ หลังจากที่ทันจิโร่ได้ต่อสู้กับโทมิโอะกะ กิยู นักล่าอสูรที่เดินทางผ่านมาและต้องการจะฆ่าเนะซึโกะที่กลายเป็นอสูรไปแล้ว เขาจึงตัดสินใจที่จะเป็นนักล่าอสูรตามคำชักชวนของกิยู เพื่อหาทางทำให้น้องสาวกลับมาเป็นมนุษย์ และชำระแค้นจากอสูรที่ฆ่าคนในครอบครัวของเขาให้จงได้
-            </p>
+        <?php
 
-            <div class="slider-footer">
-              <button class="slider-play">
-                <i class="fas fa-play"></i>
-              </button>
-              <div class="score-line"></div>
-              <div class="slider-score">
-                <span>Score</span>
-                8.69
-              </div>
-            </div>
-          </div>
-          <img src="https://images7.alphacoders.com/703/703704.jpg">
-        </div>
-        <div class="swiper-slide">
-          <div class="slider-area">
-            <h2 class="title-slider">My Hero Academia</h2>
-            <span class="cate-small">Action</span>
-            <span class="cate-small">shounen</span>
+        }
+        ?>
 
-            <div class="slider-detail">
-              <span>APR 6, 2019</span>
-              <span>EPISODES : 26</span>
-              <span>RATING R - 17 +</span>
-            </div>
 
-            <p class="slider-description">
-              เรื่องราวเกิดขึ้นในประเทศญี่ปุ่นยุคไทโช คามาโดะ ทันจิโร่ เป็นเด็กหนุ่มผู้มีจิตใจอ่อนโยนและเฉลียวฉลาด ในฐานะลูกชายคนโตของครอบครัวคนเผาถ่าน เขาจึงเป็นหัวเรี่ยวหัวแรงในการหารายได้เลี้ยงดูครอบครัวจากการเผาถ่านไปขายหลังจากพ่อของเขาเสียชีวิต ทุกสิ่งทุกอย่างได้เปลี่ยนแปลงไปเมื่อมีอสูรบุกเข้ามาสังหารคนในครอบครัวของทันจิโร่ เหลือแต่เพียงเขาและน้องสาวที่ชื่อเนะซึโกะเท่านั้น เนะซึโกะที่รอดตายมาได้กลับกลายเป็นอสูรไป ทว่าก็น่าประหลาดใจที่เธอยังคงมีความคิดและการแสดงอารมณ์อย่างมนุษย์หลงเหลืออยู่ หลังจากที่ทันจิโร่ได้ต่อสู้กับโทมิโอะกะ กิยู นักล่าอสูรที่เดินทางผ่านมาและต้องการจะฆ่าเนะซึโกะที่กลายเป็นอสูรไปแล้ว เขาจึงตัดสินใจที่จะเป็นนักล่าอสูรตามคำชักชวนของกิยู เพื่อหาทางทำให้น้องสาวกลับมาเป็นมนุษย์ และชำระแค้นจากอสูรที่ฆ่าคนในครอบครัวของเขาให้จงได้
-            </p>
-
-            <div class="slider-footer">
-              <button class="slider-play">
-                <i class="fas fa-play"></i>
-              </button>
-              <div class="score-line"></div>
-              <div class="slider-score">
-                <span>Score</span>
-                8.69
-              </div>
-            </div>
-          </div>
-          <img src="https://images8.alphacoders.com/707/707447.png">
-        </div>
       </div>
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
@@ -108,24 +73,24 @@
     </div>
   </header>
 
-	<?php foreach ($ads as $value) {
-					if ($value['ads_position'] == "1") {
-				?>
+  <?php foreach ($ads as $value) {
+    if ($value['ads_position'] == "1") {
+  ?>
 
-  <section id="anime-banners" class="bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-lg-12 ">
-          <img class="banners" src='<?php echo  $backURL . "ads/" . $value['ads_picture']; ?>'>
+      <section id="anime-banners" class="bg-light text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 ">
+              <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
   <?php } else {
-					}
-				}
-				?>
+    }
+  }
+  ?>
 
   <section class="anime-content bg-light text-center">
     <div class="container">
@@ -145,7 +110,7 @@
         <ul id="list-anime" class="list-anime">
 
           <?PHP
-            foreach ($list_anime as $val) {
+          foreach ($list_anime as $val) {
           ?>
             <li>
               <div class="anime-box">
@@ -153,13 +118,13 @@
                 <?php if (substr($val['movie_picture'], 0, 4) == 'http') {
                   $movie_picture = $val['movie_picture'];
                 } else {
-                  $movie_picture = $path_thumbnail.$val['movie_picture'];
+                  $movie_picture = $path_thumbnail . $val['movie_picture'];
                 }
 
-                $url_name = urlencode(str_replace(' ','-',$val['movie_thname']));
+                $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
                 ?>
 
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" >
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
                   <img src="<?= $movie_picture ?>">
                 </a>
               </div>
@@ -188,7 +153,24 @@
       </div>
     </div>
   </section>
+  <?php foreach ($ads as $value) {
+    if ($value['ads_position'] == "2") {
+  ?>
 
+      <section id="anime-banners" class="bg-light text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 ">
+              <img class="banners" src='<?php echo  $path_ads . $value['ads_picture']; ?>'>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <?php } else {
+    }
+  }
+  ?>
   <script>
     $(document).ready(function() {
       var track_click = 2; //track user click on "load more" button, righ now it is 0 click
@@ -203,7 +185,7 @@
         if (track_click <= total_pages) //user click number is still less than total pages
         {
           //post page number and load returned data into result element
-          $.get('<?php echo $url_loadmore?>', {
+          $.get('<?php echo $url_loadmore ?>', {
             'page': track_click
           }, function(data) {
 
