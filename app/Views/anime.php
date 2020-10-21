@@ -45,8 +45,10 @@
               <?php } ?>
 
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+              
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </div>
@@ -109,6 +111,8 @@
   window.onload = function() {
 
     var swiper = new Swiper('#NextEP', {
+      speed: 800,
+      spaceBetween: 100,
       slidesPerView: 4,
       spaceBetween: 30,
       centeredSlides: true,
@@ -118,11 +122,6 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
-
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
       },
     });
 

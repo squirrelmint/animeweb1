@@ -176,7 +176,10 @@
       var track_click = 2; //track user click on "load more" button, righ now it is 0 click
       var total_pages = '<?= $pagination['total_page'] ?>';
 
-      // $('#list-anime').load("animedata", {'page':track_click}, function() {track_click++;}); //initial data to load
+      if( track_click == total_pages ){
+        $("#anime-loadmore").hide(0);
+      }
+
       $("#anime-loadmore").click(function(e) { //user clicks on button
 
         // $(this).hide(); //hide load more button on click
@@ -213,6 +216,8 @@
             //reached end of the page yet? disable load button
             $("#anime-loadmore").hide();
           }
+        }else {
+          $("#anime-loadmore").hide(0);
         }
 
       });
