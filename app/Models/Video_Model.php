@@ -98,7 +98,7 @@ class Video_Model extends Model
         return $query->getResultArray();
     }
 
-    public function get_slide($branch_id) // เรียก Category ตาม Branch 
+    public function get_slide($branch_id) 
     {
 
         $sql = "SELECT
@@ -118,7 +118,10 @@ class Video_Model extends Model
         $data =  $query->getResultArray();
         foreach ($data as $key => $val) {
             $data[$key]['cate_data'] = $this->get_category_onanime($val['movie_id']);
+            $data[$key]['ep_data'] = $this->normalizeAnimetoArray($val['movie_thmain']);
+            $data[$key]['ep_count']= count($data[$key]['ep_data']) ;
         }
+       
         return $data;
     }
 

@@ -28,9 +28,7 @@
           <h1><?= $cate_name ?></h1>
 
         <?php
-        }
-        
-        else if (!empty($keyword)) {
+        } else if (!empty($keyword)) {
         ?>
 
           <h1>คุณกำลังค้นหา : <?= $keyword ?> </h1>
@@ -42,43 +40,57 @@
       <ul id="list-anime" class="list-anime">
 
         <?PHP
-        foreach ($list_anime as $val) {
-          // echo '<pre>' . print_r($val, true) . '</pre>';
-          // die;
+        if ($list_anime) {
+          foreach ($list_anime as $val) {
+
         ?>
-          <li>
-            <div class="anime-box">
+            <li>
+              <div class="anime-box">
 
-              <?php if (substr($val['movie_picture'], 0, 4) == 'http') {
-                $movie_picture = $val['movie_picture'];
-              } else {
-                $movie_picture = $path_thumbnail . $val['movie_picture'];
-              }
+                <?php if (substr($val['movie_picture'], 0, 4) == 'http') {
+                  $movie_picture = $val['movie_picture'];
+                } else {
+                  $movie_picture = $path_thumbnail . $val['movie_picture'];
+                }
 
-              $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
+                $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
 
-              ?>
+                ?>
 
-              <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
 
-                <img src="<?= $movie_picture ?>">
-              </a>
-            </div>
-            <div class="title-in">
-              <div class="anime-score">
-                <span>score</span>
-                <span class="score"><?= $val['movie_ratescore'] ?></span>
+                  <img src="<?= $movie_picture ?>">
+                </a>
               </div>
-              <h2>
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1"><?= $val['movie_thname'] ?></a>
-              </h2>
-            </div>
-          </li>
-        <?php  } ?>
+              <div class="title-in">
+                <div class="anime-score">
+                  <span>score</span>
+                  <span class="score"><?= $val['movie_ratescore'] ?></span>
+                </div>
+                <h2>
+                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1"><?= $val['movie_thname'] ?></a>
+                </h2>
+              </div>
+            </li>
+          <?php  }
+        } else {
+          ?>
+
+          <h3> ไม่พบอนิเมะ ที่คุณค้นหา</h3>
+
+        <?php
+        } ?>
 
 
       </ul>
-      <button id="anime-loadmore">Load more ...</button>
+      <?php
+      if ($list_anime) {
+      ?>
+        <button id="anime-loadmore">Load more ...</button>
+      <?php
+      }
+      ?>
+
     </div>
   </div>
 </section>

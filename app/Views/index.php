@@ -26,7 +26,7 @@
               ?>
               <div class="slider-detail">
                 <span>APR 6, 2019</span>
-                <span>EPISODES : 26</span>
+                <span><?= $val['ep_count']?> EPISODES</span>
                 <span>RATING R - 17 +</span>
               </div>
 

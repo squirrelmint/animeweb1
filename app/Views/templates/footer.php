@@ -1,16 +1,28 @@
   <!-- menu mobile -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <?php
+              foreach ($list_category as $val) {
+                if ( !empty($cate_id) && $cate_id == $val['category_id']) {
+                  $active = 'active';
+                }else{
+                  $active = '';
+
+                }
+
+              ?>
+
+
+                <a class="dropdown-item <?= $active ?>" onclick="goCate('<?= ($val['category_id']) ?>','<?= $val['category_name'] ?>')"><?= $val['category_name'] ?></a>
+
+              <?php
+              } ?>
   </div>
 
   <div class="menu-mobile">
     <ul>
       <li>
-        <a href="">
+        <a href=" <?php echo base_url() ?> ">
           <i class="fas fa-home"></i>HOME
         </a>
       </li>
@@ -100,8 +112,12 @@
     function goCate(id, name) {
 
       window.location.href = "/category/" + id + '/' + name ;
-
+    }
     /* Set the width of the side navigation to 0 */
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     }

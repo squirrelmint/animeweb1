@@ -45,23 +45,32 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+
+          <li class="nav-item <?= $chk_act['home'] ?>">
             <a class="nav-link" href=" <?php echo base_url() ?> ">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?= $chk_act['subthai'] ?>">
             <a class="nav-link" href="#">SUB-THAI</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?= $chk_act['soundthai'] ?>">
             <a class="nav-link" href="#">SOUND-THAI</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown <?= $chk_act['category'] ?>">
             <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <?php foreach ($list_category as $val) {
+              <?php
+              foreach ($list_category as $val) {
+                if ( !empty($cate_id) && $cate_id == $val['category_id']) {
+                  $active = 'active';
+                }else{
+                  $active = '';
+
+                }
+
               ?>
-                <a class="dropdown-item" onclick="goCate('<?= ($val['category_id']) ?>','<?= $val['category_name'] ?>')"><?= $val['category_name'] ?></a>
 
 
+                <a class="dropdown-item <?= $active ?>" onclick="goCate('<?= ($val['category_id']) ?>','<?= $val['category_name'] ?>')"><?= $val['category_name'] ?></a>
 
               <?php
               } ?>
@@ -156,7 +165,7 @@
 
       function goSearch() {
 
-        var animesearch = $("#anime-search").val()
+        var animesearch = $.trim($("#anime-search").val())
 
         if (animesearch) {
           window.location.href = "/search/" + $("#anime-search").val();

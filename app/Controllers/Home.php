@@ -35,11 +35,22 @@ class Home extends BaseController
 		$list_anime = $this->VideoModel->get_list_video($this->branch);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
-		// echo '<pre>' . print_r($slide_anime, true) . '</pre>';
-		// die;
+
+
+		$a= date_create ($slide_anime[0]['movie_create']);
+		echo '<pre>' . print_r(date_format($a,"Y/m/m/m H:i:s") ,true) . '</pre>';
+		die;
+		$chk_act = [
+			'home' => 'active',
+			'subthai' => '',
+			'soundthai' => '',
+			'category' => '',
+		];
+
 		$header_data = [
 			'document_root' => $this->document_root,
 			'list_category' => $list_category,
+			'chk_act' => $chk_act,
 
 		];
 		$body_data = [
@@ -67,11 +78,17 @@ class Home extends BaseController
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 
 		$list_category = $this->VideoModel->get_category($this->branch);
-		// echo '<pre>' . print_r($list_category, true) . '</pre>';
-		// die;
+		$chk_act = [
+			'home' => 'active',
+			'subthai' => '',
+			'soundthai' => '',
+			'category' => '',
+		];
+
 		$header_data = [
 			'document_root' => $this->document_root,
 			'list_category' => $list_category,
+			'chk_act' => $chk_act,
 
 		];
 		$body_data = [
@@ -148,17 +165,22 @@ class Home extends BaseController
 
 	public function search($keyword)
 	{
-	
+		$keyword = urldecode($keyword);
 		$list_anime = $this->VideoModel->get_list_video($this->branch, $keyword);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
-		// echo '<pre>' . print_r($slide_anime, true) . '</pre>';
-		// die;
+		$chk_act = [
+			'home' => 'active',
+			'subthai' => '',
+			'soundthai' => '',
+			'category' => '',
+		];
+
 		$header_data = [
 			'document_root' => $this->document_root,
 			'list_category' => $list_category,
 			'keyword' => $keyword,
-
+			'chk_act' => $chk_act,
 		];
 		$body_data = [
 			'url_loadmore' => base_url() . '/animedata_search',
@@ -181,15 +203,24 @@ class Home extends BaseController
 		$list_anime = $this->VideoModel->get_list_video($this->branch, '', $cate_id);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
-		// echo '<pre>' . print_r($list_category, true) . '</pre>';
-		// die;
+		$chk_act = [
+			'home' => '',
+			'subthai' => '',
+			'soundthai' => '',
+			'category' => 'active',
+		];
+
+	
 		$header_data = [
 			'document_root' => $this->document_root,
 			'list_category' => $list_category,
 			'list_anime' => $list_anime,
-			'cate_name' => urldecode($cate_name),
+			'cate_id' =>$cate_id,
+			
+			'chk_act' => $chk_act,
 		];
 		$body_data = [
+			'cate_name' => urldecode($cate_name),
 			'keyword' => $cate_id,
 			'url_loadmore' => base_url() . '/animedata_category',
 			'path_thumbnail' => $this->path_thumbnail,
