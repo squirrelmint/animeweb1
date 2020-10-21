@@ -81,6 +81,10 @@
     var total_pages = '<?= $pagination['total_page'] ?>';
     var keyword = '<?= $keyword ?>';
 
+    if( track_click == total_pages ){
+      $("#anime-loadmore").hide(0);
+    }
+
     // $('#list-anime').load("animedata", {'page':track_click}, function() {track_click++;}); //initial data to load
     $("#anime-loadmore").click(function(e) { //user clicks on button
       //  alert (keyword)
@@ -119,6 +123,8 @@
           //reached end of the page yet? disable load button
           $("#anime-loadmore").hide();
         }
+      }else{
+        $("#anime-loadmore").hide(0);
       }
 
 

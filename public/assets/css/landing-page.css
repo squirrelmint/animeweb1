@@ -127,6 +127,16 @@ footer.footer {
 
 /* Custom */
 
+a {
+  color: #00d4ea;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #9e9e9e;
+  text-decoration: none;
+}
+
 .anime-search {
   min-width: 20%;
   border-radius: 50px;
@@ -320,7 +330,8 @@ footer.footer {
   text-transform: uppercase;
 }
 
-.navbar-expand-lg .navbar-nav .dropdown-item:active {
+.navbar-expand-lg .navbar-nav .dropdown-item:active,
+.navbar-expand-lg .navbar-nav .dropdown-item.active {
   background: #00aabc;
   font-weight: 700;
 }
@@ -836,10 +847,6 @@ ul.list-anime > li div.title-in .anime-score span.score {
   ul.list-anime > li .anime-box {
     width: 146px;
     height: 206px;
-  }
-
-  ul.list-anime > li div.title-in {
-    height: 70px;
   }
 
   ul.list-anime > li div.title-in .anime-score span.score {
