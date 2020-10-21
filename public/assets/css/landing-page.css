@@ -1304,3 +1304,46 @@ ul.list-anime > li div.title-in .anime-score span.score {
 #anime-footer p {
   text-align: left;
 }
+
+#anime-contract .nav {
+  justify-content: center;
+}
+
+#anime-contract .nav-pills .nav-link {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#anime-contract .nav-pills .nav-link.active, 
+#anime-contract .nav-pills .show>.nav-link {
+  color: #00aabc;
+  background: transparent;
+  border-bottom: 3px solid #00aabc;
+  border-radius: 0;
+}
+
+#anime-contract .tab-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#anime-contract textarea,
+#anime-contract input {
+  margin-bottom: 20px;
+}
+
+#anime-contract .anime-btnrequest {
+  background: #2ef5ff;
+  border-radius: 50px;
+  border: 3px solid #3ee6df;
+  padding: 5px 20px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+#anime-contract .anime-btnrequest:hover {
+  transform: scale(1.1);
+}

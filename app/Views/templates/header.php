@@ -43,25 +43,25 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">SUB-THAI</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">SOUND-THAI</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CONTRACT</a>
-            </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">SUB-THAI</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">SOUND-THAI</a>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORY</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+              </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#anime-contract">CONTRACT</a>
+          </li>
         </ul>
         <form id="anime-formsearch">
           <div class="input-group" id="adv-search">
@@ -122,32 +122,53 @@
   </nav>
   <script>
     $(document).ready(function() {
-      // $('#anime-search').keypress(function(e) {
-
-      //   if (e.which == 13) {
-
-      //     goSearch();
-
-      //     return false; //<---- Add this line
-
-      //   }
-
-      // });
       $('#anime-formsearch').submit(function(e) {
-
-
         goSearch();
-
         return false; //<---- Add this line
-
-
-
       });
 
       function goSearch() {
-
         window.location.href = "/search/" + $("#anime-search").val();
-
       }
     });
   </script>
+
+<!-- Modal -->
+<div class="modal fade" id="anime-contract" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#request">ขอหนัง</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#contract">ติดต่อลงโฆษณา</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="formrequest">
+          <div id="request" class="tab-pane container active">
+            <form method="POST" action="">
+              <textarea rows="4" id="request_text" class="form-control"></textarea>
+              <center><button type="submit" class="anime-btnrequest">ส่งข้อความ</button></center>
+            </form>
+          </div>
+          <div id="contract" class="tab-pane container fade">
+            <form method="POST" action="">
+              <label> ชื่อ สกุล *:</label><input id="ads_con_name" type="text" class="form-control"/>
+              <label> Email *:</label><input id="ads_con_email" type="text" class="form-control"/>
+              <label> Line ID *:</label><input id="ads_con_line" type="text" class="form-control"/>
+              <label> เบอร์โทรศัพท์ *:</label><input id="ads_con_tel" type="text" class="form-control"/>
+              <center><button type="submit" class="anime-btnrequest">ส่งข้อความ</button></center>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
