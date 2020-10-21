@@ -19,6 +19,7 @@ Stack trace:
   thrown
 #0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
 #1 {main}
+<<<<<<< HEAD
 CRITICAL - 2020-10-20 01:37:34 --> Undefined variable: ads
 #0 C:\xampp\htdocs\animeweb1\app\Views\index.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 111, Array)
 #1 C:\xampp\htdocs\animeweb1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
@@ -235,4 +236,45 @@ CRITICAL - 2020-10-20 05:40:52 --> Undefined variable: url_name
 #5 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
 #6 C:\xampp\htdocs\animeweb1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #7 C:\xampp\htdocs\animeweb1\index.php(45): CodeIgniter\CodeIgniter->run()
+=======
+CRITICAL - 2020-10-20 01:35:18 --> Undefined variable: ads
+#0 C:\xampp\htdocs\anime\web1\app\Views\index.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 111, Array)
+#1 C:\xampp\htdocs\anime\web1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\anime\web1\system\Common.php(1071): CodeIgniter\View\View->render('index.php', Array, true)
+#3 C:\xampp\htdocs\anime\web1\app\Controllers\Home.php(49): view('index.php', Array)
+#4 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(910): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\anime\web1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-20 01:35:18 --> Undefined variable: ads
+#0 C:\xampp\htdocs\anime\web1\app\Views\index.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 111, Array)
+#1 C:\xampp\htdocs\anime\web1\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\anime\web1\system\Common.php(1071): CodeIgniter\View\View->render('index.php', Array, true)
+#3 C:\xampp\htdocs\anime\web1\app\Controllers\Home.php(49): view('index.php', Array)
+#4 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(910): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\anime\web1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-20 01:52:59 --> Undefined variable: totalTime
+#0 C:\xampp\htdocs\anime\web1\system\Debug\Toolbar\Views\toolbar.tpl.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\anime\web1\system\Debug\Toolbar.php(496): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\anime\web1\system\Debug\Toolbar.php(454): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#3 C:\xampp\htdocs\anime\web1\app\Config\Events.php(44): CodeIgniter\Debug\Toolbar->respond()
+#4 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#5 C:\xampp\htdocs\anime\web1\system\Events\Events.php(188): call_user_func(Object(Closure))
+#6 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(287): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\anime\web1\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-10-20 02:07:07 --> Undefined variable: totalTime
+#0 C:\xampp\htdocs\anime\web1\system\Debug\Toolbar\Views\toolbar.tpl.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\anime\web1\system\Debug\Toolbar.php(496): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\anime\web1\system\Debug\Toolbar.php(454): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#3 C:\xampp\htdocs\anime\web1\app\Config\Events.php(44): CodeIgniter\Debug\Toolbar->respond()
+#4 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#5 C:\xampp\htdocs\anime\web1\system\Events\Events.php(188): call_user_func(Object(Closure))
+#6 C:\xampp\htdocs\anime\web1\system\CodeIgniter.php(287): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\anime\web1\index.php(45): CodeIgniter\CodeIgniter->run()
+>>>>>>> 4ef30d7c9a1fa4f2ca86b84cdc9f09786ce505de
 #8 {main}
