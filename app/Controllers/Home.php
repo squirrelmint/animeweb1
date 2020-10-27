@@ -37,9 +37,6 @@ class Home extends BaseController
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$date = get_date($slide_anime[0]['movie_create']);
 		
-
-
-
 		$chk_act = [
 			'home' => 'active',
 			'subthai' => '',
