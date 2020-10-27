@@ -69,8 +69,9 @@
 
           </div>
           <div class="anime-date">
-            <span>APR 6, 2019</span>
-            <span>EPISODES : 26</span>
+          <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
+
+            <span>EPISODES : <?= $ep_index + 1 ?></span>
           </div>
           <div class="anime-description">
             <p>

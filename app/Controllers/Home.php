@@ -36,8 +36,7 @@ class Home extends BaseController
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$date = get_date($slide_anime[0]['movie_create']);
-		// echo '<pre>' . print_r($date['DateEng'], true) . '</pre>';
-		// die;
+		
 
 
 
@@ -79,6 +78,11 @@ class Home extends BaseController
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 
 		$list_category = $this->VideoModel->get_category($this->branch);
+		$date = get_date($data_anime['movie_create']);
+
+
+		// echo '<pre>' . print_r($data_anime, true) . '</pre>';
+		// die;
 		$chk_act = [
 			'home' => 'active',
 			'subthai' => '',
@@ -99,6 +103,7 @@ class Home extends BaseController
 			'ep_index' => $ep_index,
 			'ads' => $ads,
 			'path_ads' => $this->path_ads,
+			'DateEng' => $date['DateEng'],
 
 		];
 		echo view('templates/header.php', $header_data);
