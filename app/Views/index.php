@@ -11,6 +11,7 @@
         ?>
 
           <div class="swiper-slide">
+            <div></div>
             <div class="slider-area">
               <h2 class="title-slider"><?= $val['movie_thname'] ?></h2>
               <?PHP
@@ -148,8 +149,10 @@
   <section id="anime-footer" class="bg-light text-center">
     <div class="container">
       <div class="row">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <p><strong>ดูอนิเมะฟรี</strong> โหลดไวแบบไม่มีสะดุดภาพคมชัดระดับ HD FullHD 4k ครบทุกเรื่องทุกรสดูได้ทุกที่ทุกเวลาทั้งบนมือถือ แท็บเล็ต เครื่องคอมพิวเตอร์ ระบบปฏิบัติการ Android และ IOS ดูอนิเมะใหม่ให้รับชมอีกมากมาย สามารถรับชมฟรีได้ทุกที่ทุกเวลาตลอด 24 ชั่วโมง</p>
+        <div class="col-md-12">
+          <a class="navbar-brand" href="#">Start Bootstrap</a>
+          <p><strong>ดูอนิเมะฟรี</strong> โหลดไวแบบไม่มีสะดุดภาพคมชัดระดับ HD FullHD 4k ครบทุกเรื่องทุกรสดูได้ทุกที่ทุกเวลาทั้งบนมือถือ แท็บเล็ต เครื่องคอมพิวเตอร์ ระบบปฏิบัติการ Android และ IOS ดูอนิเมะใหม่ให้รับชมอีกมากมาย สามารถรับชมฟรีได้ทุกที่ทุกเวลาตลอด 24 ชั่วโมง</p>
+        </div>
       </div>
     </div>
   </section>

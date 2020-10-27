@@ -21,8 +21,8 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:83/';
-	public $document_root = 'http://localhost:83/public/';
+	public $baseURL = 'http://192.168.10.14:83/';
+	public $document_root = 'http://192.168.10.14:83/public/';
 
 
 	/*
