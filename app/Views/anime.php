@@ -33,13 +33,17 @@
           <div id="NextEP" class="swiper-container">
             <div class="swiper-wrapper">
 
-              <?php foreach ($data_anime['ep_data'] as $key => $val) { ?>
-
-
+              <?php 
+                foreach ($data_anime['ep_data'] as $key => $val) { 
+                  $active = '';
+                  if($ep_index==$key){
+                    $active = 'active';
+                  }
+              ?>
                 <div class="swiper-slide">
                   <a onclick="goView('<?= ($data_anime['movie_id']) ?>','<?= $url_name ?>','<?= $key ?> ')" tabindex="-1">
-                    <img src="<?= $movie_picture ?>"><br>
-                    <?= $val['NameEp'] ?>
+                    <img src="<?= $movie_picture ?>">
+                    <span class="<?=$active?>"><?= $val['NameEp'] ?></span>
                   </a>
                 </div>
               <?php } ?>
@@ -70,7 +74,6 @@
           </div>
           <div class="anime-date">
           <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
-
             <span>EPISODES : <?= $ep_index + 1 ?></span>
           </div>
           <div class="anime-description">

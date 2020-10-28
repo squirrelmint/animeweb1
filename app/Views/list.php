@@ -149,7 +149,7 @@
 
       }
 
-      alert(track_click+" "+total_pages)
+      // alert(track_click+" "+total_pages)
 
     });
   });

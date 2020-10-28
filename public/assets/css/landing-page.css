@@ -350,12 +350,24 @@ img.logo {
   height:550px;
 }
 
+#HomeSlide .swiper-slide .slider-overlay{
+  position: absolute;
+  opacity: 1;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, #000000de, transparent);
+  z-index: 1;
+}
+
 #HomeSlide .swiper-slide img {
   width: 100%;
   position: relative;
 }
 
-#HomeSlide .swiper-button-next, .swiper-button-prev{
+#HomeSlide .swiper-button-next, #HomeSlide .swiper-button-prev{
   top: 90%;
   color: #616161;
 }
@@ -378,7 +390,7 @@ img.logo {
   width: 60%;
   left: 10%;
   top: 10%;
-  z-index: 1;
+  z-index: 2;
 }
 
 #HomeSlide .swiper-wrapper .swiper-slide .slider-area h2.title-slider {
@@ -472,7 +484,7 @@ img.logo {
 #HomeSlide .swiper-wrapper .swiper-slide .slider-area .slider-footer .slider-score span {
   text-transform: uppercase;
   font-size: 16px;
-  color: #656565;
+  color: #fff;
 }
 
 .navbar-expand-lg {
@@ -921,6 +933,10 @@ ul.list-anime > li div.title-in .anime-score span.score {
   margin-top: 1rem;
 }
 
+#anime-video #anime-player .anime-episode {
+  margin-bottom: 2rem;
+}
+
 #anime-video #anime-player .anime-episode #NextEP.swiper-container {
   width: 100%;
   height: 100%;
@@ -944,7 +960,54 @@ ul.list-anime > li div.title-in .anime-score span.score {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-slide a img {
+  width: 100%;
+}
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-slide:hover {
+  transform: scale(1.1);
+}
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-slide a span {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #717171;
+}
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-slide a span.active {
+  color: #00aabc;
+}
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-button-prev {
+  height: 100%;
+  top: 22px;
+  left: 0;
+  padding: 0 15px;
+  width: fit-content;
+  background: linear-gradient(to right, black, transparent);
+}
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-button-next {
+  height: 100%;
+  top: 22px;
+  right: 0;
+  padding: 0 15px;
+  width: fit-content;
+  background: linear-gradient(to left, black, transparent);
+}
+
+#anime-video #anime-player .anime-episode #NextEP .swiper-button-prev::after,
+#anime-video #anime-player .anime-episode #NextEP .swiper-button-next::after {
+  font-size: 46px;
+  color: #fff;
+}
+
 @media (min-width: 1025px) {
   #anime-player #player {
     height: 650px!important;
@@ -973,6 +1036,15 @@ ul.list-anime > li div.title-in .anime-score span.score {
     min-height: 230px;
   }
 
+  #anime-video #anime-player .anime-episode #NextEP .swiper-slide a span {
+    font-size: 12px;
+  }
+
+  #anime-video #anime-player .anime-episode #NextEP .swiper-button-prev::after,
+  #anime-video #anime-player .anime-episode #NextEP .swiper-button-next::after {
+    font-size: 30px;
+  }
+
 }
 
 @media (max-width: 320px) {
@@ -983,6 +1055,15 @@ ul.list-anime > li div.title-in .anime-score span.score {
 
   #anime-player #player {
     height: 200px;
+  }
+
+  #anime-video #anime-player .anime-episode #NextEP .swiper-button-prev::after,
+  #anime-video #anime-player .anime-episode #NextEP .swiper-button-next::after {
+    font-size: 26px;
+  }
+
+  #anime-video #anime-player .anime-episode #NextEP .swiper-slide a span {
+    font-size: 12px;
   }
 
 }
@@ -1040,6 +1121,11 @@ ul.list-anime > li div.title-in .anime-score span.score {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+#anime-video #anime-detail .anime-card-detail .anime-category a {
+  margin-bottom: 5px;
 }
 
 #anime-video #anime-detail .anime-card-detail .anime-category span.cate-name {
@@ -1051,7 +1137,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   border-radius: 5px;
   font-size: 14px;
   margin-right: 5px;
-  margin-bottom: .5rem;
+  margin-bottom: 5px;
 }
 
 #anime-video #anime-detail .anime-card-detail .anime-date {
@@ -1139,6 +1225,10 @@ ul.list-anime > li div.title-in .anime-score span.score {
 }
 
 @media (min-width: 321px) and (max-width: 480px) { 
+
+  #anime-player #player {
+    height: 255px;
+  }
 
   #anime-video .container .row {
     flex-direction: column-reverse!important;
