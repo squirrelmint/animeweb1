@@ -30,7 +30,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('anime/(:num)/(:segment)/(:num)', 'Home::anime/$1/$2/$3');
+$routes->get('anime/(:num)/(:segment)/(:num)/(:any)', 'Home::anime/$1/$2/$3/$4');
 
 $routes->get('animedata', 'Home::animedata');
 $routes->get('animedata_search', 'Home::animedata_search');

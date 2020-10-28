@@ -26,6 +26,7 @@
         $movie_picture = $path_thumbnail . $data_anime['movie_picture'];
       }
       $url_name = urlencode(str_replace(' ', '-', $data_anime['movie_thname']))
+
       ?>
       <div id="anime-player">
         <iframe id="player" class="player" src="<?= base_url('player/' . $data_anime['movie_id'] . '/' . $ep_index) ?>" scrolling="no" frameborder="0" allowfullscreen="yes"></iframe>
@@ -33,11 +34,14 @@
           <div id="NextEP" class="swiper-container">
             <div class="swiper-wrapper">
 
-              <?php foreach ($data_anime['ep_data'] as $key => $val) { ?>
+              <?php foreach ($data_anime['ep_data'] as $key => $val) { 
+                $url_nameep = urlencode(str_replace(' ', '-', $val['NameEp']))
+                 ?>
 
 
                 <div class="swiper-slide">
-                  <a onclick="goView('<?= ($data_anime['movie_id']) ?>','<?= $url_name ?>','<?= $key ?> ')" tabindex="-1">
+               
+                  <a onclick="goView('<?= ($data_anime['movie_id']) ?>','<?= urldecode($url_name) ?>','<?= $key ?>','<?= $url_nameep ?>')" tabindex="-1">
                     <img src="<?= $movie_picture ?>"><br>
                     <?= $val['NameEp'] ?>
                   </a>
@@ -71,7 +75,7 @@
           <div class="anime-date">
           <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
 
-            <span>EPISODES : <?= $ep_index + 1 ?></span>
+            <span>EPISODES : <?= $data_anime['ep_data'][$ep_index]['NameEp']?></span>
           </div>
           <div class="anime-description">
             <p>

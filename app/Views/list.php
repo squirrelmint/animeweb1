@@ -24,18 +24,16 @@
       <div class="anime-title-list">
         <?php
         if (!empty($cate_name)) {
-        ?>
-          <h1><?= $cate_name ?></h1>
+      
+         $title = $cate_name ;
 
-        <?php
         } else if (!empty($keyword)) {
-        ?>
-
-          <h1>คุณกำลังค้นหา : <?= $keyword ?> </h1>
-        <?php
+       
+          $title = 'คุณกำลังค้นหา : '. $keyword;
+     
         }
         ?>
-        <!-- <h1>แอคชั่น</h1> -->
+        <h1><?= $title ?></h1>
       </div>
       <ul id="list-anime" class="list-anime">
 
@@ -114,7 +112,7 @@
 ?>
 <script>
   $(document).ready(function() {
-    var track_click = 1; //track user click on "load more" button, righ now it is 0 click
+    var track_click = 2; //track user click on "load more" button, righ now it is 0 click
     var total_pages = '<?= $pagination['total_page'] ?>';
     var keyword = '<?= $keyword ?>';
 
@@ -149,7 +147,7 @@
 
       }
 
-      alert(track_click+" "+total_pages)
+      // alert(track_click+" "+total_pages)
 
     });
   });

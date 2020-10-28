@@ -31,12 +31,16 @@ class Home extends BaseController
 
 	public function index()
 	{
+
 		$slide_anime = $this->VideoModel->get_slide($this->branch);
 		$list_anime = $this->VideoModel->get_list_video($this->branch);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$date = get_date($slide_anime[0]['movie_create']);
-		
+
+		// echo '<pre>' . print_r($list_anime, true) . '</pre>';
+		// 		die;
+
 		$chk_act = [
 			'home' => 'active',
 			'subthai' => '',
@@ -69,7 +73,7 @@ class Home extends BaseController
 		echo view('templates/footer.php');
 	}
 
-	public function anime($id, $Name, $ep_index = 0)
+	public function anime($id, $Name, $ep_index = 0, $Nameep)
 	{
 		$data_anime = $this->VideoModel->get_anime_data($id);
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
@@ -101,6 +105,7 @@ class Home extends BaseController
 			'ads' => $ads,
 			'path_ads' => $this->path_ads,
 			'DateEng' => $date['DateEng'],
+			'Nameep' => $Nameep,
 
 		];
 		echo view('templates/header.php', $header_data);
@@ -111,9 +116,6 @@ class Home extends BaseController
 	public function animedata()
 	{
 		$list_anime = $this->VideoModel->get_list_video($this->branch, '', '', $_GET['page']);
-
-
-
 		$header_data = [
 			'document_root' => $this->document_root,
 			'path_thumbnail' => $this->path_thumbnail,
@@ -121,7 +123,6 @@ class Home extends BaseController
 
 
 		];
-
 		echo view('animedata.php', $header_data);
 	}
 

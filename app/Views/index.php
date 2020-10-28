@@ -125,7 +125,7 @@
                 $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
                 ?>
 
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0' )" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                   <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
               </div>

@@ -40,7 +40,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img class="logo" src="<?= base_url().'/public/logo/Logo-Anime-8k-1.png' ?> ">
+      <img class="logo" src="<?= base_url().'/public/logo/Logo-Anime-8k-1.png' ?> ">
       </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,7 +70,7 @@
 
 
                 <a class="dropdown-item <?= $active ?>" onclick="goCate('<?= ($val['category_id']) ?>','<?= $val['category_name'] ?>')"><?= $val['category_name'] ?></a>
-
+        
               <?php
               } ?>
 
