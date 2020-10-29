@@ -26,6 +26,7 @@
         $movie_picture = $path_thumbnail . $data_anime['movie_picture'];
       }
       $url_name = urlencode(str_replace(' ', '-', $data_anime['movie_thname']))
+
       ?>
       <div id="anime-player">
         <iframe id="player" class="player" src="<?= base_url('player/' . $data_anime['movie_id'] . '/' . $ep_index) ?>" scrolling="no" frameborder="0" allowfullscreen="yes"></iframe>
@@ -74,7 +75,7 @@
           </div>
           <div class="anime-date">
           <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
-            <span>EPISODES : <?= $ep_index + 1 ?></span>
+            <span>EPISODES : <?= $data_anime['ep_data'][$ep_index]['NameEp']?></span>
           </div>
           <div class="anime-description">
             <p>

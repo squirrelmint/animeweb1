@@ -102,9 +102,12 @@
 
     });
 
-    function goView(id, name , ep) {
+    function goView(id, name , ep ,nameep) {
+      if(!nameep){
+        nameep == ' '
+      }
     
-      window.location.href = "/anime/" + id + '/' + name + '/' + ep;
+      window.location.href = "/anime/" + id + '/' + name + '/' + ep + '/' + nameep ;
     }
 
     

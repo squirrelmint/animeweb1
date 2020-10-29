@@ -24,18 +24,16 @@
       <div class="anime-title-list">
         <?php
         if (!empty($cate_name)) {
-        ?>
-          <h1><?= $cate_name ?></h1>
+      
+         $title = $cate_name ;
 
-        <?php
         } else if (!empty($keyword)) {
-        ?>
-
-          <h1>คุณกำลังค้นหา : <?= $keyword ?> </h1>
-        <?php
+       
+          $title = 'คุณกำลังค้นหา : '. $keyword;
+     
         }
         ?>
-        <!-- <h1>แอคชั่น</h1> -->
+        <h1><?= $title ?></h1>
       </div>
       <ul id="list-anime" class="list-anime">
 
@@ -57,7 +55,7 @@
 
                 ?>
 
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')">
 
                   <img src="<?= $movie_picture ?>">
                 </a>
@@ -68,7 +66,7 @@
                   <span class="score"><?= $val['movie_ratescore'] ?></span>
                 </div>
                 <h2>
-                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1"><?= $val['movie_thname'] ?></a>
+                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')" tabindex="-1"><?= $val['movie_thname'] ?></a>
                 </h2>
               </div>
             </li>
@@ -114,7 +112,7 @@
 ?>
 <script>
   $(document).ready(function() {
-    var track_click = 1; //track user click on "load more" button, righ now it is 0 click
+    var track_click = 2; //track user click on "load more" button, righ now it is 0 click
     var total_pages = '<?= $pagination['total_page'] ?>';
     var keyword = '<?= $keyword ?>';
 
