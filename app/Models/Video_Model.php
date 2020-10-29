@@ -95,6 +95,7 @@ class Video_Model extends Model
 
         $query = $this->db->query($sql, [$branch_id]);
 
+        
         return $query->getResultArray();
     }
 
@@ -158,7 +159,7 @@ class Video_Model extends Model
                 $sql_where .
                 "ORDER BY `$this->table_movie`.movie_create DESC";
         }
-        
+
         $query = $this->db->query($sql);
 
         $total = count($query->getResultArray());

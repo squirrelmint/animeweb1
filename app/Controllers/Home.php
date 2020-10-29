@@ -33,13 +33,17 @@ class Home extends BaseController
 	{
 
 		$slide_anime = $this->VideoModel->get_slide($this->branch);
-		$list_anime = $this->VideoModel->get_list_video($this->branch);
+		$pagination = $this->VideoModel->get_list_video($this->branch);
+
+		foreach ($pagination['list'] as $val) {
+			$list_anime[] = $this->VideoModel->get_anime_data($val['movie_id']);
+		}
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$date = get_date($slide_anime[0]['movie_create']);
 
 		// echo '<pre>' . print_r($list_anime, true) . '</pre>';
-		// 		die;
+		// die;
 
 		$chk_act = [
 			'home' => 'active',
@@ -57,8 +61,8 @@ class Home extends BaseController
 		$body_data = [
 			'url_loadmore' => base_url() . '/animedata',
 			'path_thumbnail' => $this->path_thumbnail,
-			'list_anime' => $list_anime['list'],
-			'pagination' => $list_anime,
+			'list_anime' => $list_anime,
+			'pagination' => $pagination,
 			'ads' => $ads,
 			'path_ads' => $this->path_ads,
 			'slide_anime' => $slide_anime,
@@ -170,7 +174,12 @@ class Home extends BaseController
 	public function search($keyword)
 	{
 		$keyword = urldecode($keyword);
-		$list_anime = $this->VideoModel->get_list_video($this->branch, $keyword);
+		$pagination = $this->VideoModel->get_list_video($this->branch,  $keyword, '', $page = 1);
+
+
+		foreach ($pagination['list'] as $val) {
+			$list_anime[] = $this->VideoModel->get_anime_data($val['movie_id']);
+		}
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$chk_act = [
@@ -189,8 +198,8 @@ class Home extends BaseController
 		$body_data = [
 			'url_loadmore' => base_url() . '/animedata_search',
 			'path_thumbnail' => $this->path_thumbnail,
-			'list_anime' => $list_anime['list'],
-			'pagination' => $list_anime,
+			'list_anime' => $list_anime,
+			'pagination' => $pagination,
 
 			'ads' => $ads,
 			'path_ads' => $this->path_ads,
@@ -204,7 +213,11 @@ class Home extends BaseController
 	public function category($cate_id, $cate_name)
 	{
 
-		$list_anime = $this->VideoModel->get_list_video($this->branch, '', $cate_id);
+		$pagination = $this->VideoModel->get_list_video($this->branch, "", $cate_id, $page = 1);
+
+		foreach ($pagination['list'] as $val) {
+			$list_anime[] = $this->VideoModel->get_anime_data($val['movie_id']);
+		}
 		$ads = $this->VideoModel->get_path_imgads($this->branch);
 		$list_category = $this->VideoModel->get_category($this->branch);
 		$chk_act = [
@@ -214,7 +227,8 @@ class Home extends BaseController
 			'category' => 'active',
 		];
 
-
+		// echo '<pre>' . print_r($pagination['list'], true) . '</pre>';
+		// die;
 		$header_data = [
 			'document_root' => $this->document_root,
 			'list_category' => $list_category,
@@ -228,8 +242,8 @@ class Home extends BaseController
 			'keyword' => $cate_id,
 			'url_loadmore' => base_url() . '/animedata_category',
 			'path_thumbnail' => $this->path_thumbnail,
-			'list_anime' => $list_anime['list'],
-			'pagination' => $list_anime,
+			'list_anime' => $list_anime,
+			'pagination' => $pagination,
 			'ads' => $ads,
 			'path_ads' => $this->path_ads,
 

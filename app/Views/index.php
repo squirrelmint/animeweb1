@@ -8,6 +8,7 @@
 
         foreach ($slide_anime as $val) {
           $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
+
         ?>
 
           <div class="swiper-slide">
@@ -39,7 +40,7 @@
             </p>
 
               <div class="slider-footer">
-                <button class="slider-play" onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
+                <button class="slider-play" onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')">
                   <i class="fas fa-play"></i>
                 </button>
                 <div class="score-line"></div>
@@ -125,7 +126,7 @@
                 $url_name = urlencode(str_replace(' ', '-', $val['movie_thname']));
                 ?>
 
-                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0' )" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
+                <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                   <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
               </div>
@@ -135,7 +136,7 @@
                   <span class="score"><?= $val['movie_ratescore'] ?></span>
                 </div>
                 <h2>
-                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')" tabindex="-1" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>"><?= $val['movie_thname'] ?></a>
+                  <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" tabindex="-1" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>"><?= $val['movie_thname'] ?></a>
                 </h2>
               </div>
             </li>
