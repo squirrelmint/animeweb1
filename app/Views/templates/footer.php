@@ -116,17 +116,19 @@
 
       window.location.href = "/category/" + id + '/' + name ;
     }
+
     /* Set the width of the side navigation to 0 */
     /* Set the width of the side navigation to 250px */
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
       document.body.style.overflow = 'hidden'
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      document.getElementById("overlay").style.display = "block";
     }
+
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
       document.body.style.overflow = 'auto'
-      document.body.style.backgroundColor = "white";
+      document.getElementById("overlay").style.display = "none";
     }
     
   </script>

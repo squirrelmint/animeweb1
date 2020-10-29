@@ -23,15 +23,15 @@
     <div id="anime-list" class="row">
       <div class="anime-title-list">
         <?php
-        if (!empty($cate_name)) {
-      
-         $title = $cate_name ;
+          if (!empty($cate_name)) {
+        
+            $title = $cate_name ;
 
-        } else if (!empty($keyword)) {
-       
-          $title = 'คุณกำลังค้นหา : '. $keyword;
-     
-        }
+          } else if (!empty($keyword)) {
+        
+            $title = 'คุณกำลังค้นหา : '. $keyword;
+      
+          }
         ?>
         <h1><?= $title ?></h1>
       </div>

@@ -35,7 +35,7 @@
 </head>
 
 <body>
-
+  <div id="overlay"></div>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
     <div class="container">
@@ -95,42 +95,6 @@
             <div class="input-group-btn">
               <div class="btn-group" role="group">
                 <button type="submit" class="anime-search-button"><i class="fas fa-search"></i></button>
-                <!-- <div class="dropdown dropdown-lg">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                      <div class="dropdown-menu dropdown-menu-right" role="menu">
-                          <div class="anime-search-detail">
-                            <label>Type :</label>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="anime_type1" name="anime_type" value="movie">
-                              <label class="form-check-label" for="anime_type1">
-                                Movie
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="anime_type2" name="anime_type" value="subthai">
-                              <label class="form-check-label" for="anime_type2">
-                                SUB-THAI
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" id="anime_type3" name="anime_type" value="soundthai">
-                              <label class="form-check-label" for="anime_type3">
-                                SOUND-THAI
-                              </label>
-                            </div>
-                          </div>
-                          <div class="anime-search-line"></div>
-                          <div class="anime-search-detail">
-                            <div class="form-group">
-                              <label for="anime_category">Category :</label>
-                              <select id="anime_category" name="anime_category" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                              </select>
-                            </div>
-                          </div>
-                      </div>
-                  </div> -->
               </div>
             </div>
           </div>
@@ -219,19 +183,16 @@ $(function(){
         goSearch();
         return false; //<---- Add this line
       });
+    });
 
-      function goSearch() {
+    function goSearch() {
+      var animesearch = $.trim($("#anime-search").val())
 
-        var animesearch = $.trim($("#anime-search").val())
-
-        if (animesearch) {
-          window.location.href = "/search/" + $("#anime-search").val();
-        } else {
-          window.location.href = "<?= base_url() ?>";
-        }
-
+      if (animesearch) {
+        window.location.href = "/search/" + $("#anime-search").val();
+      } else {
+        window.location.href = "<?= base_url() ?>";
       }
-      
-
+    }
       
   </script>
