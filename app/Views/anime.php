@@ -120,7 +120,7 @@
       spaceBetween: 100,
       slidesPerView: 4,
       spaceBetween: 30,
-      centeredSlides: true,
+      centeredSlides: false,
       initialSlide: '<?=$ep_index?>',
 
       // Navigation arrows

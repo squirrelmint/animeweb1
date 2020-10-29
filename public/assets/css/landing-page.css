@@ -136,6 +136,12 @@ a:hover {
   color: #9e9e9e;
   text-decoration: none;
 }
+
+button:focus,
+a:focus {
+  outline: none;
+}
+
 section {
   padding-top: 20px;
 }
@@ -803,6 +809,16 @@ ul.list-anime > li .anime-box a img:hover {
   transform: scale(1.1);
 }
 
+ul.list-anime > li .anime-box .anime-view {
+  position: absolute;
+  right: 0;
+  padding: 0 8px;
+  color: #e4e4e4;
+  background: #00d4ea;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 ul.list-anime > li div.title-in {
   position: absolute;
   /* display: flex;
@@ -1391,7 +1407,7 @@ ul.list-anime > li div.title-in .anime-score span.score {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  z-index: 999; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
   background-color: #ececec; /* Black*/

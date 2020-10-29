@@ -56,9 +56,9 @@
                 ?>
 
                 <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>')">
-
                   <img src="<?= $movie_picture ?>">
                 </a>
+                <span class="anime-view"><i class="fas fa-eye"></i> 3</span>
               </div>
               <div class="title-in">
                 <div class="anime-score">
