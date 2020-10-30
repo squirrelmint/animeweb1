@@ -40,7 +40,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-      <img class="logo" src="<?= base_url().'/public/logo/Logo-Anime-8k-1.png' ?> ">
+        <img class="logo" src="<?= base_url() . '/public/logo/Logo-Anime-8k-1.png' ?> ">
       </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,7 +70,7 @@
 
 
                 <a class="dropdown-item <?= $active ?>" onclick="goCate('<?= ($val['category_id']) ?>','<?= $val['category_name'] ?>')"><?= $val['category_name'] ?></a>
-        
+
               <?php
               } ?>
 
@@ -160,7 +160,7 @@
 
           <div class="tab-content" id="formrequest">
             <div id="request" class="tab-pane container active">
-              <form  class="anime-formcontract" novalidate method="POST" action="">
+              <form class="anime-formcontract" novalidate method="POST" action="">
                 <textarea rows="4" id="request_text" type="text" class="form-control" required autocomplete="off"></textarea>
                 <center><button type="submit" class="anime-btnrequest">ส่งข้อความ</button></center>
               </form>
@@ -174,19 +174,19 @@
                   กรุณากรอกชื่อ นามสกุล
                 </div>
                 <label for="ads_con_email"> Email :</label>
-                <input id="ads_con_email" type="text" class="form-control"  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$" required autocomplete="off">
+                <input id="ads_con_email" type="text" class="form-control" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$" required autocomplete="off">
                 <div class="invalid-feedback">
                   กรุณากรอก Email เช่น " xxx@xxx.com "
                 </div>
-                <label for="ads_con_line"> Line ID :</label> 
+                <label for="ads_con_line"> Line ID :</label>
                 <input id="ads_con_line" type="text" class="form-control" required autocomplete="off">
                 <div class="invalid-feedback">
                   กรุณากรอก Line ID
                 </div>
                 <label for="ads_con_tel"> เบอร์โทรศัพท์ :</label>
                 <input id="ads_con_tel" type="text" class="form-control" required autocomplete="off" pattern="^0([8|9|6])([0-9]{8}$)">
-                <div class="invalid-feedback" >
-                  กรุณากรอก เบอร์โทรศัพท์ 10หลัก  เช่น " 0600000000 "
+                <div class="invalid-feedback">
+                  กรุณากรอก เบอร์โทรศัพท์ 10หลัก เช่น " 0600000000 "
                 </div>
 
                 <label id="ads_con_all_alt">**กรุณากรอกข้อมูลให้ครบทุกช่อง</label>
@@ -201,37 +201,37 @@
   </div>
 
   <script type="text/javascript">
-$(function(){
-     $(".anime-formcontract").on("submit",function(){
-         var form = $(this)[0];
+    $(function() {
+      $(".anime-formcontract").on("submit", function() {
+        var form = $(this)[0];
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
-        }3
-        form.classList.add('was-validated');         
-     });     
-});
-</script>
+        }
+        3
+        form.classList.add('was-validated');      
+      });
+    });
+  </script>
   <script>
     $(document).ready(function() {
-      $("#ads_con_email_alt").hide();
-      $('#anime-formsearch').submit(function(e) {
-        goSearch();
-        return false; //<---- Add this line
-      });
+          $("#ads_con_email_alt").hide();
+          $('#anime-formsearch').submit(function(e) {
+            goSearch();
+            return false; //<---- Add this line
+          });
 
-      function goSearch() {
+          function goSearch() {
 
-        var animesearch = $.trim($("#anime-search").val())
+            var animesearch = $.trim($("#anime-search").val())
 
-        if (animesearch) {
-          window.location.href = "/search/" + $("#anime-search").val();
-        } else {
-          window.location.href = "<?= base_url() ?>";
-        }
+            if (animesearch) {
+              window.location.href = "/search/" + $("#anime-search").val();
+            } else {
+              window.location.href = "<?= base_url() ?>";
+            }
 
-      }
-      
+          }
+    });
 
-      
   </script>

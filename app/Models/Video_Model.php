@@ -236,6 +236,7 @@ class Video_Model extends Model
     // Get video_series
     public function get_anime_data($id)
     {
+
         $sql = "SELECT
                     *
                 FROM
@@ -251,7 +252,8 @@ class Video_Model extends Model
         $data[0]['ep_data'] = $this->normalizeAnimetoArray($data[0]['movie_thmain']);
         $data[0]['cate_data'] = $this->get_category_onanime($data[0]['movie_id']);
         unset($data[0]['movie_thmain']);
-
+// echo '<pre>' . print_r($data[0], true) . '</pre>';
+// 		die;
         return $data[0];
     }
 

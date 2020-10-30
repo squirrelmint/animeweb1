@@ -182,7 +182,7 @@
       var track_click = 2; //track user click on "load more" button, righ now it is 0 click
       var total_pages = '<?= $pagination['total_page'] ?>';
 
-      if( track_click == total_pages ){
+      if( track_click >= total_pages ){
         $("#anime-loadmore").hide(0);
       }
 

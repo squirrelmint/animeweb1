@@ -116,7 +116,7 @@
     var total_pages = '<?= $pagination['total_page'] ?>';
     var keyword = '<?= $keyword ?>';
 
-    if( track_click == total_pages ){
+    if( track_click >= total_pages ){
       $("#anime-loadmore").hide(0);
     }
 
