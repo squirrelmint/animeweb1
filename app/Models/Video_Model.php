@@ -363,33 +363,35 @@ class Video_Model extends Model
 
 
     // นับจำนวนผู้ชม
-    public function movie_view($movie_id)
+    public function countView($id)
     {
 
         $sql = "SELECT
                     `$this->table_movie`.movie_id,
+                     `$this->table_movie`.movie_thname,
                     `$this->table_movie`.movie_view
                 FROM
                     $this->table_movie
-                WHERE `$this->table_movie`.movie_id = '$movie_id' ";
+                WHERE `$this->table_movie`.movie_id = '$id' ";
 
         $query = $this->db->query($sql);
         $data = $query->getResultArray();
 
-        if ($data[0]['movie_view'] == 0 && empty($data[0]['movie_view'])) {
+        if ($data[0]['movie_view'] == 0 || empty($data[0]['movie_view'])) {
 
-            $movie_view = 1;
+            $movie_view_add = 1;
         } else {
 
-            $movie_view = $data[0]['movie_view']++;
+            $movie_view_add = $data[0]['movie_view']+1;
         }
 
+
         $builder = $this->db->table($this->table_movie);
-        $builder->where('movie_id', $movie_id);
+        $builder->where('movie_id', $id);
         $this->db->transBegin();
 
         $dataadd =  [
-            'movie_view' =>  $movie_view,
+            'movie_view' =>  $movie_view_add,
         ];
 
 
@@ -409,7 +411,7 @@ class Video_Model extends Model
 
         }
 
-        return $movie_view;
+        return $movie_view_add;
     }
 
     //หนังที่น่สนใจ 2 

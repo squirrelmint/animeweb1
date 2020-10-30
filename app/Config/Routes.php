@@ -41,6 +41,8 @@ $routes->get('search/(:any)', 'Home::search/$1');
 $routes->get('category/(:num)/(:any)', 'Home::category/$1/$2');
 $routes->get('list', 'Home::list');
 
+$routes->get('countview/(:num)', 'Home::countView/$1');
+
 
 
 /**
