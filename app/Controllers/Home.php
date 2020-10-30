@@ -173,6 +173,7 @@ class Home extends BaseController
 
 	public function search($keyword)
 	{
+		$list_anime = array() ;
 		$keyword = urldecode($keyword);
 		$pagination = $this->VideoModel->get_list_video($this->branch,  $keyword, '', $page = 1);
 
@@ -276,5 +277,9 @@ class Home extends BaseController
 		];
 
 		echo view('player.php', $data);
+	}
+	public function countView($id)
+	{
+		$this->VideoModel->countView($id);
 	}
 }
