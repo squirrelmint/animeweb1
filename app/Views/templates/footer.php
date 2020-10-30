@@ -104,7 +104,7 @@
 
     function goView(id, name , ep, nameep) {
       if(!nameep){
-        nameep == ' '
+        nameep = ' ';
       }
       countView(id);
 
