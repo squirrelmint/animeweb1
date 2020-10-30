@@ -1,9 +1,9 @@
 
 <?PHP
-          foreach ($list_anime as $val) {
-            // echo '<pre>' . print_r($val, true) . '</pre>';
-            // die;
-          ?>
+foreach ($list_anime as $val) {
+  // echo '<pre>' . print_r($val, true) . '</pre>';
+  // die;
+?>
             <li>
               <div class="anime-box">
 
@@ -16,9 +16,9 @@
                 ?>
 
                 <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0')">
-
                   <img src="<?= $movie_picture ?>">
                 </a>
+                <span class="anime-view"><i class="fas fa-eye"></i> 3</span>
               </div>
               <div class="title-in">
                 <div class="anime-score">

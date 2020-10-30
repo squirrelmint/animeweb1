@@ -12,7 +12,7 @@
         ?>
 
           <div class="swiper-slide">
-            <div></div>
+            
             <div class="slider-area">
               <h2 class="title-slider"><?= $val['movie_thname'] ?></h2>
               <?PHP
@@ -27,7 +27,6 @@
               }
               ?>
               <div class="slider-detail">
-
                 <span> <?= $DateEng['m'].' '. $DateEng['d'].', '.$DateEng['Y'] ?></span>
                 <span><?= $val['ep_count']?> EPISODES</span>
               </div>
@@ -46,12 +45,12 @@
                 <div class="score-line"></div>
                 <div class="slider-score">
                   <span>Score</span>
-                  <?= $val['movie_ratescore'] ?> /100
+                  <?= $val['movie_ratescore'] ?>/100
 
                 </div>
               </div>
             </div>
-             
+            <div class="slider-overlay">  </div>
             <img src="<?= base_url(). $val['slide_img'] ?> ">
           </div>
 
@@ -129,6 +128,7 @@
                 <a onclick="goView('<?= ($val['movie_id']) ?>','<?= $url_name ?>','0','<?= str_replace(' ','-' ,$val['ep_data'][0]['NameEp']) ?>' )" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                   <img src="<?= $movie_picture ?>" alt="<?= $val['movie_thname'] ?>" title="<?= $val['movie_thname'] ?>">
                 </a>
+                <span class="anime-view"><i class="fas fa-eye"></i> 3</span>
               </div>
               <div class="title-in">
                 <div class="anime-score">
